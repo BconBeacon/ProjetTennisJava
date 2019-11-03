@@ -54,12 +54,12 @@ public class JFSimple extends JFrame {
 		
 		JButton btn_t5 = new JButton("Tour 5");
 		btn_t5.setFont(new Font("Times New Roman", Font.PLAIN, 14));
-		btn_t5.setBounds(699, 11, 77, 23);
+		btn_t5.setBounds(612, 11, 77, 23);
 		panel_menu.add(btn_t5);
 		
 		JButton btn_t6 = new JButton("Tour 6");
 		btn_t6.setFont(new Font("Times New Roman", Font.PLAIN, 14));
-		btn_t6.setBounds(786, 11, 77, 23);
+		btn_t6.setBounds(699, 11, 77, 23);
 		panel_menu.add(btn_t6);
 		
 		JButton btn_final = new JButton("16/Final");
@@ -69,23 +69,28 @@ public class JFSimple extends JFrame {
 		
 		JButton btn_t3 = new JButton("Tour 3");
 		btn_t3.setFont(new Font("Times New Roman", Font.PLAIN, 14));
-		btn_t3.setBounds(525, 11, 77, 23);
+		btn_t3.setBounds(438, 11, 77, 23);
 		panel_menu.add(btn_t3);
 		
 		JButton btn_t4 = new JButton("Tour 4");
 		btn_t4.setFont(new Font("Times New Roman", Font.PLAIN, 14));
-		btn_t4.setBounds(612, 11, 77, 23);
+		btn_t4.setBounds(525, 11, 77, 23);
 		panel_menu.add(btn_t4);
 		
 		JButton btn_t1 = new JButton("Tour 1");
 		btn_t1.setFont(new Font("Times New Roman", Font.PLAIN, 14));
-		btn_t1.setBounds(351, 11, 77, 23);
+		btn_t1.setBounds(264, 11, 77, 23);
 		panel_menu.add(btn_t1);
 		
 		JButton btn_t2 = new JButton("Tour 2");
 		btn_t2.setFont(new Font("Times New Roman", Font.PLAIN, 14));
-		btn_t2.setBounds(438, 11, 77, 23);
+		btn_t2.setBounds(351, 11, 77, 23);
 		panel_menu.add(btn_t2);
+		
+		JButton btn_t7 = new JButton("Tour 7");
+		btn_t7.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		btn_t7.setBounds(786, 12, 77, 23);
+		panel_menu.add(btn_t7);
 		
 		JPanel panel_tour = new JPanel();
 		panel_tour.setBounds(10, 65, 975, 776);
