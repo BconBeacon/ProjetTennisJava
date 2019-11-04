@@ -2,10 +2,10 @@ package biscontiflavian.gsm.ClassesPOJO;
 
 import java.util.Date;
 
-public class PersonnePOJO {
-	private String nom;
-	private String prenom;
-	private Date dateNaissance;
-	private enum Sexe { H , F };
-	private Sexe sexe;
+public abstract class PersonnePOJO {
+	protected String nom;
+	protected String prenom;
+	protected Date dateNaissance;
+	protected enum Sexe { H , F };
+	protected Sexe sexe;
 }

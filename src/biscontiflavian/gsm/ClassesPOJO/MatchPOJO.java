@@ -7,11 +7,25 @@ public class MatchPOJO {
 	private int numero;
 	private Date date;
 	private final int dureeEsperee = 2;
-	private CourPOJO court;
+	private CourPOJO cour;
 	private EquipePOJO[] t_equipes;
 	private ArbitrePOJO arbitre;
 	private EquipePOJO vainqueur;
 	private ArrayList<SetPOJO> l_sets;
+	
+	public MatchPOJO(int numero) 
+	{
+		this.numero = numero;
+	}
+	
+	public MatchPOJO(int numero, EquipePOJO e1, EquipePOJO e2)
+	{
+		this.numero = numero;
+		t_equipes = new EquipePOJO[] { e1, e2 };
+		arbitre = null;
+		cour = null;
+		vainqueur = null;
+	}
 	
 	public MatchPOJO(EquipePOJO e1, EquipePOJO e2, int nbSetsGagnants)
 	{
@@ -39,7 +53,7 @@ public class MatchPOJO {
 			vainqueur = designerVainqueur(nbSetsGagnants);
 		}
 	}
-	
+
 	public SetPOJO genererSet(boolean dernierSet)
 	{
 		if(dernierSet) return new SetPOJO(calculerProbabilites(), true);
@@ -107,6 +121,27 @@ public class MatchPOJO {
 		{
 			System.out.println(set);
 		}
+	}
+	
+	public void afficherInfosMatch()
+	{
+		System.out.println("Match " +  numero);
+		try
+		{
+			for(EquipePOJO e : t_equipes)
+			{
+				e.afficherJoueurs();
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println("Pas encore de joueur dans ce match");
+		}
+	}
+	
+	public void setDate(Date d)
+	{
+		date = d;
 	}
 	
 	public static void main(String args[])

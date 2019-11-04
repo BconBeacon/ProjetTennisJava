@@ -20,4 +20,12 @@ public class EquipePOJO {
 		}
 		return niveau;
 	}
+	
+	public void afficherJoueurs()
+	{
+		for(JoueurPOJO j : t_joueurs)
+		{
+			System.out.println(j);
+		}
+	}
 }
