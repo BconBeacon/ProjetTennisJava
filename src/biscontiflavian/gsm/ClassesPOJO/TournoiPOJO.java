@@ -156,8 +156,18 @@ public class TournoiPOJO {
 		TournoiPOJO tournoi = new TournoiPOJO(SH,SD,DH,DD,DM);
 		
 		//tournoi.afficherMatchs();
+				
+		//tournoi.afficherResultatsMatchs();
 		
-		tournoi.genererResultatsTour();
-		tournoi.afficherResultatsMatchs();
+		EquipePOJO[][] vainqueurs = tournoi.genererResultatsTour();;
+		for(int i=0;i<5;i++)
+		{
+			System.out.println("----------------------- "+i);
+			for(EquipePOJO e : vainqueurs[i])
+			{
+				e.afficherJoueurs();
+				System.out.println("*****");
+			}
+		}
 	}
 }
