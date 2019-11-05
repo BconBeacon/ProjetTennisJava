@@ -3,9 +3,12 @@ package biscontiflavian.gsm.ClassesPOJO;
 import java.util.ArrayList;
 import java.util.Date;
 
+import biscontiflavian.gsm.ClassesUtilitaires.CUDate;
+
 public class MatchPOJO {
+	//Attributs****************************************************************************************
 	private int numero;
-	private Date date;
+	private CUDate date;
 	private final int dureeEsperee = 2;
 	private CourPOJO cour;
 	private EquipePOJO[] t_equipes;
@@ -13,14 +16,21 @@ public class MatchPOJO {
 	private EquipePOJO vainqueur;
 	private ArrayList<SetPOJO> l_sets;
 	
+	//Constructeurs*************************************************************************************
 	public MatchPOJO(int numero) 
 	{
 		this.numero = numero;
+		l_sets = new ArrayList<>();
+		t_equipes = null;
+		arbitre = null;
+		cour = null;
+		vainqueur = null;
 	}
 	
 	public MatchPOJO(int numero, EquipePOJO e1, EquipePOJO e2)
 	{
 		this.numero = numero;
+		l_sets = new ArrayList<>();
 		t_equipes = new EquipePOJO[] { e1, e2 };
 		arbitre = null;
 		cour = null;
@@ -33,28 +43,45 @@ public class MatchPOJO {
 		t_equipes = new EquipePOJO[] { e1, e2 };
 		vainqueur = null;
 		
+		jouerMatch(nbSetsGagnants);
+	}
+	
+	//Méthodes******************************************************************************
+	public EquipePOJO jouerMatch(int nbSetsGagnants)
+	{
+		int set = 0;
 		while(vainqueur == null)
 		{
 			switch(nbSetsGagnants)
 			{
 			case 2 :
 			{
-				if(l_sets.size() == 2) l_sets.add(genererSet(true));
-				else l_sets.add(genererSet(false));
+				while(vainqueur == null)
+				{
+					if(set == 2) l_sets.add(genererSet(true));
+					else l_sets.add(genererSet(false));
+					set++;
+					vainqueur = designerVainqueur(nbSetsGagnants);
+				}				
 				break;
 			}
 			case 3 :
 			{
-				if(l_sets.size() == 4) l_sets.add(genererSet(true));
-				else l_sets.add(genererSet(false));
+				while(vainqueur == null)
+				{
+					if(set == 4) l_sets.add(genererSet(true));
+					else l_sets.add(genererSet(false));
+					set++;
+					vainqueur = designerVainqueur(nbSetsGagnants);
+				}
 				break;
 			}
-			}			
-			vainqueur = designerVainqueur(nbSetsGagnants);
+			}						
 		}
+		return vainqueur;
 	}
 
-	public SetPOJO genererSet(boolean dernierSet)
+	private SetPOJO genererSet(boolean dernierSet)
 	{
 		if(dernierSet) return new SetPOJO(calculerProbabilites(), true);
 		else return new SetPOJO(calculerProbabilites(), false);
@@ -115,6 +142,13 @@ public class MatchPOJO {
 		else return null;
 	}
 	
+	//La méthode retourne 'true' si le match est jouable
+	public boolean obtenirEtatMatch()
+	{
+		if(getVainqueur() == null && t_equipes == null)return false;
+		else return true;
+	}
+	
 	public void afficherResultatsMatch()
 	{
 		for(SetPOJO set : l_sets)
@@ -135,15 +169,22 @@ public class MatchPOJO {
 		}
 		catch(Exception e)
 		{
-			System.out.println("Pas encore de joueur dans ce match");
+			System.out.println("UNDEFINED");
 		}
 	}
 	
-	public void setDate(Date d)
+	//Getters*******************************************************************************************
+	public EquipePOJO getVainqueur()
 	{
-		date = d;
+		return vainqueur;
 	}
 	
+	//public void setDate(CUDate d)
+	//{
+	//	date = d;
+	//}
+	
+	//Main***********************************************************************************************
 	public static void main(String args[])
 	{
 		JoueurPOJO[] j1;
@@ -154,7 +195,7 @@ public class MatchPOJO {
 		j2 = new JoueurPOJO[] { new JoueurPOJO(1) };
 		EquipePOJO e2 = new EquipePOJO(j2);
 		
-		MatchPOJO match1 = new MatchPOJO(e1, e2, 3);
+		MatchPOJO match1 = new MatchPOJO(e1, e2, 2);
 		match1.afficherResultatsMatch();
 		
 		System.out.println("************************");

@@ -7,15 +7,12 @@ import biscontiflavian.gsm.ClassesUtilitaires.*;
 
 public class TournoiPOJO {
 	private String nom;
-	private Date date;
 	private OrdonnancementPOJO[] t_ordo;
 	
-	@SuppressWarnings("deprecation")
 	public TournoiPOJO(EquipePOJO[] t_simpleHomme, EquipePOJO[] t_simpleDame, 
 			EquipePOJO[] t_doubleHomme, EquipePOJO[] t_doubleDame, EquipePOJO[] t_doubleMixe)
 	{
 		nom = "Grand Slam - 2019";
-		date = new Date(2019,5,8);
 		t_ordo = genererTournoi(t_simpleHomme, t_simpleDame, t_doubleHomme, t_doubleDame, t_doubleMixe);
 	}
 	
@@ -27,8 +24,9 @@ public class TournoiPOJO {
 		ArrayList<EquipePOJO> DH = new ArrayList<>();
 		ArrayList<EquipePOJO> DD = new ArrayList<>();
 		ArrayList<EquipePOJO> DM = new ArrayList<>();
-		OrdonnancementPOJO[] tournoi = new OrdonnancementPOJO[] { new OrdonnancementPOJO("SH", 3), new OrdonnancementPOJO("SD", 2), new OrdonnancementPOJO("DH", 2),
-				new OrdonnancementPOJO("DD", 2), new OrdonnancementPOJO("DM", 2)};
+		OrdonnancementPOJO[] tournoi = new OrdonnancementPOJO[] { new OrdonnancementPOJO(CUTypeMatch.SH, 3), new OrdonnancementPOJO(CUTypeMatch.SD, 2), 
+				new OrdonnancementPOJO(CUTypeMatch.DH, 2),
+				new OrdonnancementPOJO(CUTypeMatch.DD, 2), new OrdonnancementPOJO(CUTypeMatch.DM, 2)};
 		
 		for(int i=0;i<128;i++)
 		{
@@ -94,15 +92,41 @@ public class TournoiPOJO {
 		return tournoi;
 	}
 	
+	public EquipePOJO[][] genererResultatsTour()
+	{
+		EquipePOJO[][] vainqueurs = new EquipePOJO[5][];
+		int cpt = 0;
+		for(OrdonnancementPOJO o : t_ordo)
+		{
+			vainqueurs[cpt] = o.jouerMatchs();
+			cpt++;
+		}
+		
+		return vainqueurs;
+	}
+	
+	public void afficherResultatsMatchs()
+	{
+		int cpt = 1;
+		for(OrdonnancementPOJO o : t_ordo)
+		{
+			System.out.println("***************************************************************************** " + cpt);
+			o.afficherResultatsMatchs();
+			cpt++;
+		}
+	}
+	
 	public void afficherMatchs()
 	{
 		for(OrdonnancementPOJO o : t_ordo)
 		{
 			o.afficherMatchs();
+			System.out.println("---------------------------------------");
+			System.out.println("---------------------------------------");
+			System.out.println("---------------------------------------");
 		}
 	}
 	
-	@SuppressWarnings("deprecation")
 	public static void main (String args[])
 	{		
 		EquipePOJO[] SH = new EquipePOJO[128];
@@ -131,6 +155,9 @@ public class TournoiPOJO {
 		
 		TournoiPOJO tournoi = new TournoiPOJO(SH,SD,DH,DD,DM);
 		
-		tournoi.afficherMatchs();
+		//tournoi.afficherMatchs();
+		
+		tournoi.genererResultatsTour();
+		tournoi.afficherResultatsMatchs();
 	}
 }

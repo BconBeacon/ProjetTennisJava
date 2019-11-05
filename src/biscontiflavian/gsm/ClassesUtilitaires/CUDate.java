@@ -15,6 +15,4 @@ public class CUDate {
 		heure = h;
 		minute = min;
 	}
-	
-	
 }

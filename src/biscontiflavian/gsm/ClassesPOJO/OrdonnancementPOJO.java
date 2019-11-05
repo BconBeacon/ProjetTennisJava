@@ -1,42 +1,29 @@
 package biscontiflavian.gsm.ClassesPOJO;
 
+import java.util.ArrayList;
+
+import biscontiflavian.gsm.ClassesUtilitaires.CUTypeMatch;
+
 public class OrdonnancementPOJO {
-	private enum Type { SH, SD, DH, DD, DM };
-	private Type type;
+	private CUTypeMatch type;
 	private int nbSetsGagnants;
 	private MatchPOJO[] t_matchs;
 	
 	@SuppressWarnings("preview")
-	public OrdonnancementPOJO(String type, int nbSetsGagnants)
+	public OrdonnancementPOJO(CUTypeMatch type, int nbSetsGagnants)
 	{
 		switch(type)
 		{
-			case "SH" :
+			case SH, SD :
 			{
-				this.type = Type.SH;
 				t_matchs = new MatchPOJO[127];
 			}
-			case "SD" :
+			case DH, DD, DM :
 			{
-				this.type = Type.SD;
-				t_matchs = new MatchPOJO[127];
-			}
-			case "DH" :
-			{
-				this.type = Type.DH;
-				t_matchs = new MatchPOJO[63];
-			}
-			case "DD" :
-			{
-				this.type = Type.DD;
-				t_matchs = new MatchPOJO[63];
-			}
-			case "DM" :
-			{
-				this.type = Type.DM;
 				t_matchs = new MatchPOJO[63];
 			}
 		}
+		this.type = type;
 		this.nbSetsGagnants = nbSetsGagnants;
 	}
 	
@@ -45,11 +32,39 @@ public class OrdonnancementPOJO {
 		this.t_matchs = t_matchs;
 	}
 	
+	public EquipePOJO[] jouerMatchs()
+	{
+		ArrayList<EquipePOJO> vainqueurs = new ArrayList<>();
+		for(MatchPOJO m : t_matchs)
+		{
+			if(m.obtenirEtatMatch() == true)vainqueurs.add(m.jouerMatch(nbSetsGagnants));
+		}
+		
+		EquipePOJO[] t_equipes = new EquipePOJO[vainqueurs.size()];
+		for(int i=0;i<t_equipes.length;i++)
+		{
+			t_equipes[i] = vainqueurs.get(i);
+		}
+		
+		return t_equipes;
+	}
+	
 	public void afficherMatchs()
 	{
 		for(MatchPOJO m : t_matchs)
 		{
 			m.afficherInfosMatch();
+		}
+	}
+
+	public void afficherResultatsMatchs() 
+	{
+		int cpt = 1;
+		for(MatchPOJO m : t_matchs)
+		{
+			System.out.println("--------- " + cpt);
+			m.afficherResultatsMatch();
+			cpt++;
 		}
 	}
 }
