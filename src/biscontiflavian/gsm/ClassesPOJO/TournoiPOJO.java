@@ -213,6 +213,8 @@ public class TournoiPOJO {
 		EquipePOJO[][] vainqueurs5 = tournoi.genererResultatsTour();
 		tournoi.genererTourSuivant(vainqueurs5);
 		
+		EquipePOJO[][] vainqueurs6 = tournoi.genererResultatsTour();
+		
 		tournoi.afficherResultatsMatchs();
 	}
 }
