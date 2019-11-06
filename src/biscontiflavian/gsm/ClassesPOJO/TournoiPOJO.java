@@ -105,6 +105,25 @@ public class TournoiPOJO {
 		return vainqueurs;
 	}
 	
+	public void genererTourSuivant(EquipePOJO[][] vainqueursTourPrecedent)
+	{
+		ArrayList<EquipePOJO> vainqueurs = new ArrayList<>();
+		for(int i=0;i<5;i++)
+		{
+			for(int j=0;j<vainqueursTourPrecedent[i].length;j++)
+			{
+				vainqueurs.add(vainqueursTourPrecedent[i][j]);
+			}
+			Collections.shuffle(vainqueurs);
+			
+			while(vainqueurs.size() != 0)
+			{
+				t_ordo[i].organiserMatchsTour(vainqueurs.get(0), vainqueurs.get(1));
+				vainqueurs.remove(0); vainqueurs.remove(0);
+			}
+		}
+	}
+	
 	public void afficherResultatsMatchs()
 	{
 		int cpt = 1;
@@ -160,14 +179,40 @@ public class TournoiPOJO {
 		//tournoi.afficherResultatsMatchs();
 		
 		EquipePOJO[][] vainqueurs = tournoi.genererResultatsTour();;
-		for(int i=0;i<5;i++)
-		{
-			System.out.println("----------------------- "+i);
-			for(EquipePOJO e : vainqueurs[i])
-			{
-				e.afficherJoueurs();
-				System.out.println("*****");
-			}
-		}
+		//for(int i=0;i<5;i++)
+		//{
+			//System.out.println("----------------------- "+i);
+			//for(EquipePOJO e : vainqueurs[i])
+			//{
+				//e.afficherJoueurs();
+				//System.out.println("*****");
+			//}
+			//System.out.println("----------------------- ");
+		//}		
+		tournoi.genererTourSuivant(vainqueurs);
+		
+		EquipePOJO[][] vainqueurs2 = tournoi.genererResultatsTour();
+		//for(int i=0;i<5;i++)
+		//{
+			//System.out.println("----------------------- "+i);
+			//for(EquipePOJO e : vainqueurs2[i])
+			//{
+				//e.afficherJoueurs();
+				//System.out.println("*****");
+			//}
+			//System.out.println("----------------------- ");
+		//}		
+		tournoi.genererTourSuivant(vainqueurs2);
+		
+		EquipePOJO[][] vainqueurs3 = tournoi.genererResultatsTour();
+		tournoi.genererTourSuivant(vainqueurs3);
+		
+		EquipePOJO[][] vainqueurs4 = tournoi.genererResultatsTour();
+		tournoi.genererTourSuivant(vainqueurs4);
+		
+		EquipePOJO[][] vainqueurs5 = tournoi.genererResultatsTour();
+		tournoi.genererTourSuivant(vainqueurs5);
+		
+		tournoi.afficherResultatsMatchs();
 	}
 }

@@ -145,8 +145,8 @@ public class MatchPOJO {
 	//La méthode retourne 'true' si le match est jouable
 	public boolean obtenirEtatMatch()
 	{
-		if(getVainqueur() == null && t_equipes == null)return false;
-		else return true;
+		if(getVainqueur() == null && t_equipes != null)return true;
+		else return false;
 	}
 	
 	public void afficherResultatsMatch()
@@ -173,10 +173,22 @@ public class MatchPOJO {
 		}
 	}
 	
-	//Getters*******************************************************************************************
+	//Getters et Setters*******************************************************************************************
 	public EquipePOJO getVainqueur()
 	{
 		return vainqueur;
+	}
+	
+	public EquipePOJO[] getEquipes()
+	{
+		return t_equipes;
+	}
+	
+	public void setEquipes(EquipePOJO e1, EquipePOJO e2)
+	{
+		t_equipes = new EquipePOJO[2];
+		t_equipes[0] = e1;
+		t_equipes[1] = e2;
 	}
 	
 	//public void setDate(CUDate d)

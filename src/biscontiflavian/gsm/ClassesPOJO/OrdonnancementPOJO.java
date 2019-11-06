@@ -49,6 +49,21 @@ public class OrdonnancementPOJO {
 		return t_equipes;
 	}
 	
+	public void organiserMatchsTour(EquipePOJO e1, EquipePOJO e2)
+	{
+		boolean ok = false;
+		int cpt = 0;
+		while(!ok)
+		{
+			if(t_matchs[cpt].getEquipes() == null)
+			{
+				t_matchs[cpt].setEquipes(e1, e2);
+				ok = true;
+			}
+			cpt++;
+		}
+	}
+	
 	public void afficherMatchs()
 	{
 		for(MatchPOJO m : t_matchs)
