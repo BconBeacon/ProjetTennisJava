@@ -166,6 +166,8 @@ public class MatchPOJO {
 			{
 				e.afficherJoueurs();
 			}
+			afficherResultatsMatch();
+			getVainqueur().afficherJoueurs();
 		}
 		catch(Exception e)
 		{

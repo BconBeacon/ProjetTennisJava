@@ -5,10 +5,12 @@ import java.util.ArrayList;
 import biscontiflavian.gsm.ClassesUtilitaires.CUTypeMatch;
 
 public class OrdonnancementPOJO {
+	//Attributs***************************************************************************
 	private CUTypeMatch type;
 	private int nbSetsGagnants;
 	private MatchPOJO[] t_matchs;
 	
+	//Constructeurs************************************************************************
 	@SuppressWarnings("preview")
 	public OrdonnancementPOJO(CUTypeMatch type, int nbSetsGagnants)
 	{
@@ -27,6 +29,7 @@ public class OrdonnancementPOJO {
 		this.nbSetsGagnants = nbSetsGagnants;
 	}
 	
+	//Méthodes***************************************************************************
 	public void setTableauMatchs(MatchPOJO[] t_matchs)
 	{
 		this.t_matchs = t_matchs;
@@ -64,6 +67,12 @@ public class OrdonnancementPOJO {
 		}
 	}
 	
+	public EquipePOJO obtenirVainqueurOrdonnancement()
+	{
+		return t_matchs[t_matchs.length-1].getVainqueur();
+	}
+	
+	//Méthodes de tests**************************************************************************
 	public void afficherMatchs()
 	{
 		for(MatchPOJO m : t_matchs)
@@ -78,7 +87,7 @@ public class OrdonnancementPOJO {
 		for(MatchPOJO m : t_matchs)
 		{
 			System.out.println("--------- " + cpt);
-			m.afficherResultatsMatch();
+			m.afficherInfosMatch();
 			cpt++;
 		}
 	}

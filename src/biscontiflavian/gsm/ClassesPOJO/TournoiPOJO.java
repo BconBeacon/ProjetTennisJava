@@ -6,9 +6,11 @@ import java.util.Date;
 import biscontiflavian.gsm.ClassesUtilitaires.*;
 
 public class TournoiPOJO {
+	//Attributs*************************************************************************
 	private String nom;
 	private OrdonnancementPOJO[] t_ordo;
 	
+	//Constructeurs******************************************************************************
 	public TournoiPOJO(EquipePOJO[] t_simpleHomme, EquipePOJO[] t_simpleDame, 
 			EquipePOJO[] t_doubleHomme, EquipePOJO[] t_doubleDame, EquipePOJO[] t_doubleMixe)
 	{
@@ -16,6 +18,7 @@ public class TournoiPOJO {
 		t_ordo = genererTournoi(t_simpleHomme, t_simpleDame, t_doubleHomme, t_doubleDame, t_doubleMixe);
 	}
 	
+	//Méthodes*************************************************************************
 	private OrdonnancementPOJO[] genererTournoi(EquipePOJO[] t_simpleHomme, EquipePOJO[] t_simpleDame, 
 			EquipePOJO[] t_doubleHomme, EquipePOJO[] t_doubleDame, EquipePOJO[] t_doubleMixe)
 	{
@@ -110,20 +113,33 @@ public class TournoiPOJO {
 		ArrayList<EquipePOJO> vainqueurs = new ArrayList<>();
 		for(int i=0;i<5;i++)
 		{
-			for(int j=0;j<vainqueursTourPrecedent[i].length;j++)
+			if(t_ordo[i].obtenirVainqueurOrdonnancement() == null)
 			{
-				vainqueurs.add(vainqueursTourPrecedent[i][j]);
-			}
-			Collections.shuffle(vainqueurs);
-			
-			while(vainqueurs.size() != 0)
-			{
-				t_ordo[i].organiserMatchsTour(vainqueurs.get(0), vainqueurs.get(1));
-				vainqueurs.remove(0); vainqueurs.remove(0);
+				for(int j=0;j<vainqueursTourPrecedent[i].length;j++)
+				{
+					vainqueurs.add(vainqueursTourPrecedent[i][j]);
+				}
+				
+				while(vainqueurs.size() != 0)
+				{
+					t_ordo[i].organiserMatchsTour(vainqueurs.get(0), vainqueurs.get(1));
+					vainqueurs.remove(0); vainqueurs.remove(0);
+				}
 			}
 		}
 	}
 	
+	public EquipePOJO[] obtenirVainqueursTournoi()
+	{
+		EquipePOJO[] vainqueurs = new EquipePOJO[5];
+		for(int i=0;i<5;i++)
+		{
+			vainqueurs[i] = t_ordo[i].obtenirVainqueurOrdonnancement();
+		}
+		return vainqueurs;
+	}
+	
+	//Méthodes de tests*************************************************************************
 	public void afficherResultatsMatchs()
 	{
 		int cpt = 1;
@@ -174,34 +190,10 @@ public class TournoiPOJO {
 		
 		TournoiPOJO tournoi = new TournoiPOJO(SH,SD,DH,DD,DM);
 		
-		//tournoi.afficherMatchs();
-				
-		//tournoi.afficherResultatsMatchs();
-		
-		EquipePOJO[][] vainqueurs = tournoi.genererResultatsTour();;
-		//for(int i=0;i<5;i++)
-		//{
-			//System.out.println("----------------------- "+i);
-			//for(EquipePOJO e : vainqueurs[i])
-			//{
-				//e.afficherJoueurs();
-				//System.out.println("*****");
-			//}
-			//System.out.println("----------------------- ");
-		//}		
+		EquipePOJO[][] vainqueurs = tournoi.genererResultatsTour();;	
 		tournoi.genererTourSuivant(vainqueurs);
 		
-		EquipePOJO[][] vainqueurs2 = tournoi.genererResultatsTour();
-		//for(int i=0;i<5;i++)
-		//{
-			//System.out.println("----------------------- "+i);
-			//for(EquipePOJO e : vainqueurs2[i])
-			//{
-				//e.afficherJoueurs();
-				//System.out.println("*****");
-			//}
-			//System.out.println("----------------------- ");
-		//}		
+		EquipePOJO[][] vainqueurs2 = tournoi.genererResultatsTour();	
 		tournoi.genererTourSuivant(vainqueurs2);
 		
 		EquipePOJO[][] vainqueurs3 = tournoi.genererResultatsTour();
@@ -214,7 +206,18 @@ public class TournoiPOJO {
 		tournoi.genererTourSuivant(vainqueurs5);
 		
 		EquipePOJO[][] vainqueurs6 = tournoi.genererResultatsTour();
+		tournoi.genererTourSuivant(vainqueurs6);
+		
+		tournoi.genererResultatsTour();
 		
 		tournoi.afficherResultatsMatchs();
+		
+		for(EquipePOJO e : tournoi.obtenirVainqueursTournoi())
+		{
+			System.out.println("*****************");
+			if(e != null)e.afficherJoueurs();
+			else System.out.println("UNDEFINED");
+			System.out.println("*****************");
+		}
 	}
 }

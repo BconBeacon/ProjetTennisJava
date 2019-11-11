@@ -3,11 +3,13 @@ package biscontiflavian.gsm.ClassesPOJO;
 import java.util.Random;
 
 public class SetPOJO {
+	//Attributs************************************************************************
 	private byte ptsE1;
 	private byte ptsE2;
 	private enum Type { normal, dernier };
 	private Type type;
 	
+	//Constructeurs************************************************************************
 	public SetPOJO(int probabilite, boolean dernierSet)
 	{
 		ptsE1 = 0;
@@ -19,7 +21,8 @@ public class SetPOJO {
 		genererPoints(probabilite);
 	}
 	
-	//La variable prob correspond à la probabilité de victoire de l'équipe 1
+	//Méthodes*****************************************************************************
+	//La variable 'prob' correspond à la probabilité de victoire de l'équipe 1
 	public void genererPoints(int prob)
 	{
 		boolean fin = false;
@@ -63,11 +66,13 @@ public class SetPOJO {
 		else ptsE2++;
 	}
 	
+	//Surchages de méthodes**********************************************************************
 	public String toString()
 	{
 		return ptsE1 + " - " + ptsE2;
 	}
 	
+	//Getters************************************************************************
 	public int getPtsE1()
 	{
 		return ptsE1;
@@ -78,6 +83,7 @@ public class SetPOJO {
 		return ptsE2;
 	}
 	
+	//Main*********************************************************************************
 	public static void main(String args[])
 	{
 		//Tests
