@@ -9,6 +9,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import java.awt.Font;
 import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
 
 public class JFDouble extends JFrame {
 
@@ -840,24 +842,24 @@ public class JFDouble extends JFrame {
 		button.setBounds(10, 11, 77, 23);
 		panel_menu.add(button);
 		
-		JButton btn_t1 = new JButton("Tour 1");
-		btn_t1.setFont(new Font("Times New Roman", Font.PLAIN, 14));
-		btn_t1.setBounds(612, 11, 77, 23);
-		panel_menu.add(btn_t1);
+		JMenu mnToursliminatoires = new JMenu("Tours \u00E9liminatoires");
+		mnToursliminatoires.setBounds(228, 11, 200, 26);
+		panel_menu.add(mnToursliminatoires);
 		
-		JButton button_3 = new JButton("16/Final");
-		button_3.setFont(new Font("Times New Roman", Font.PLAIN, 14));
-		button_3.setBounds(873, 11, 92, 23);
-		panel_menu.add(button_3);
+		JMenuItem menu_t1_p1 = new JMenuItem("Matchs 01 - 16");
+		mnToursliminatoires.add(menu_t1_p1);
 		
-		JButton btnTour = new JButton("Tour 2");
-		btnTour.setFont(new Font("Times New Roman", Font.PLAIN, 14));
-		btnTour.setBounds(699, 11, 77, 23);
-		panel_menu.add(btnTour);
+		JMenuItem menu_t1_p2 = new JMenuItem("Matchs 17 - 32");
+		mnToursliminatoires.add(menu_t1_p2);
 		
-		JButton button_1 = new JButton("Tour 2");
-		button_1.setFont(new Font("Times New Roman", Font.PLAIN, 14));
-		button_1.setBounds(786, 11, 77, 23);
-		panel_menu.add(button_1);
+		JMenu menu_final = new JMenu("Tours finaux");
+		menu_final.setBounds(438, 11, 152, 26);
+		panel_menu.add(menu_final);
+		
+		JMenuItem menu_final16 = new JMenuItem("16/Finale");
+		menu_final.add(menu_final16);
+		
+		JMenuItem menu_finale8 = new JMenuItem("8/Finale - Finale");
+		menu_final.add(menu_finale8);
 	}
 }
