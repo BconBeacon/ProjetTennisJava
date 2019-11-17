@@ -72,6 +72,12 @@ public class OrdonnancementPOJO {
 		return t_matchs[t_matchs.length-1].getVainqueur();
 	}
 	
+	//Getters*************************************************************************
+	public MatchPOJO[] getMatchs()
+	{
+		return t_matchs;
+	}
+	
 	//Méthodes de tests**************************************************************************
 	public void afficherMatchs()
 	{

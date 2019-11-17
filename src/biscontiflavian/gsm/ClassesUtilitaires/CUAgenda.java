@@ -201,6 +201,11 @@ public class CUAgenda {
 		}
 	}
 	
+	public CUDate[][] getAgenda()
+	{
+		return agenda;
+	}
+	
 	public static void main (String args[])
 	{
 		CUAgenda agenda = CUAgenda.getInstance();

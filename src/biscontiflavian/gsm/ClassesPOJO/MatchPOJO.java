@@ -160,6 +160,7 @@ public class MatchPOJO {
 	public void afficherInfosMatch()
 	{
 		System.out.println("Match " +  numero);
+		System.out.println(date);
 		try
 		{
 			for(EquipePOJO e : t_equipes)
@@ -193,10 +194,10 @@ public class MatchPOJO {
 		t_equipes[1] = e2;
 	}
 	
-	//public void setDate(CUDate d)
-	//{
-	//	date = d;
-	//}
+	public void setDate(CUDate d)
+	{
+		date = d;
+	}
 	
 	//Main***********************************************************************************************
 	public static void main(String args[])

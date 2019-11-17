@@ -16,6 +16,7 @@ public class TournoiPOJO {
 	{
 		nom = "Grand Slam - 2019";
 		t_ordo = genererTournoi(t_simpleHomme, t_simpleDame, t_doubleHomme, t_doubleDame, t_doubleMixe);
+		assignerDates(CUAgenda.getInstance().getAgenda());
 	}
 	
 	//Méthodes*************************************************************************
@@ -93,6 +94,18 @@ public class TournoiPOJO {
 		tournoi[4].setTableauMatchs(t_matchsDM);
 		
 		return tournoi;
+	}
+	
+	private void assignerDates(CUDate[][] agenda)
+	{
+		for(int i=0;i<t_ordo.length;i++)
+		{
+			MatchPOJO[] matchs = t_ordo[i].getMatchs();
+			for(int j=0;j<matchs.length;j++)
+			{
+				matchs[j].setDate(agenda[i][j]);
+			}
+		}
 	}
 	
 	public EquipePOJO[][] genererResultatsTour()
