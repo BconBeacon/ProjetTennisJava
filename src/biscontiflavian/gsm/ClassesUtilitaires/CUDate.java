@@ -19,4 +19,9 @@ public class CUDate {
 		typeMatch = tm;
 		numeroMatch = nm;
 	}
+	
+	public String toString()
+	{
+		return jour + "/" + mois + "/" + annee + " à " + heure + "h" + minute + " | Match " + numeroMatch + " "+ typeMatch.toString(); 
+	}
 }
