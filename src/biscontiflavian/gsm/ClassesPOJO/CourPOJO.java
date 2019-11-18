@@ -1,9 +1,10 @@
 package biscontiflavian.gsm.ClassesPOJO;
 
+import biscontiflavian.gsm.ClassesUtilitaires.CUTypeCour;
+
 public class CourPOJO {
 	private byte numero;
 	private int nbPlaces;
-	private enum Type { Dur, Gazon, Terre, Moquette };
-	private Type type;
+	private CUTypeCour type;
 	private boolean couvert;
 }
