@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
@@ -27,6 +28,18 @@ public class CourDAO
 			sortie.println(c);
 		}		
 		sortie.close();
+	}
+	
+	public ArrayList<String> getCours() throws IOException
+	{	
+		BufferedReader entree = new BufferedReader(new FileReader (fichier));		
+		ArrayList<String> cours = new ArrayList<>();
+		String ligne;
+		
+		while((ligne = entree.readLine()) != null)cours.add(ligne);
+		entree.close();
+		
+		return cours;
 	}
 	
 	public void afficherContenuFichier() throws IOException
