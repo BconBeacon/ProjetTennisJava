@@ -1,10 +1,10 @@
 package biscontiflavian.gsm.JFrames;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -18,7 +18,8 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class JFAccueil extends JFrame {
-
+	
+	private static final long serialVersionUID = -1309977255491777036L;
 	private JPanel contentPane;
 	private final String mdp = "projettennis";
 
@@ -70,7 +71,7 @@ public class JFAccueil extends JFrame {
 		lbl_tournoi.setBounds(100, 135, 50, 20);
 		contentPane.add(lbl_tournoi);
 		
-		JTextPane txt_token = new JTextPane();
+		JPasswordField txt_token = new JPasswordField();
 		txt_token.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		txt_token.setToolTipText("");
 		txt_token.setBounds(220, 80, 150, 20);
@@ -87,7 +88,7 @@ public class JFAccueil extends JFrame {
 			@SuppressWarnings("deprecation")
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				if(txt_token.getText().length() >= 3 || txt_tournoi.getText().length() >= 5)
+				if(txt_token.getText().length() >= 3 && txt_tournoi.getText().length() >= 5)
 				{
 					if(txt_token.getText().equals(mdp))
 					{
