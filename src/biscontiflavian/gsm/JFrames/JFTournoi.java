@@ -1,6 +1,5 @@
 package biscontiflavian.gsm.JFrames;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -8,11 +7,14 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
 
 public class JFTournoi extends JFrame {
-
+	private static final long serialVersionUID = -3788870959857009959L;
 	private JPanel contentPane;
 
 	/**
@@ -35,6 +37,8 @@ public class JFTournoi extends JFrame {
 	 * Create the frame.
 	 */
 	public JFTournoi() {
+		JFTournoi frame = this;
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -81,11 +85,30 @@ public class JFTournoi extends JFrame {
 		contentPane.add(btn_dm);
 		
 		JButton btn_deconnexion = new JButton("Deconnexion");
-		btn_deconnexion.setBounds(10, 227, 95, 23);
+		btn_deconnexion.addMouseListener(new MouseAdapter() {
+			@SuppressWarnings("deprecation")
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				JFAccueil newFrame = new JFAccueil();
+				newFrame.show();
+				frame.dispose();
+			}
+		});
+		btn_deconnexion.setBounds(10, 227, 110, 23);
 		contentPane.add(btn_deconnexion);
 		
 		JButton btn_quitter = new JButton("Quitter");
+		btn_quitter.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				frame.dispose();
+			}
+		});
 		btn_quitter.setBounds(329, 227, 95, 23);
 		contentPane.add(btn_quitter);
+		
+		JButton btn_tour = new JButton("G\u00E9n\u00E9rer tour suivant");
+		btn_tour.setBounds(130, 227, 189, 23);
+		contentPane.add(btn_tour);
 	}
 }
