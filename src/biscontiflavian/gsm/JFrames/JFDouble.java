@@ -53,784 +53,784 @@ public class JFDouble extends JFrame {
 		panel_2.setBounds(24, 11, 228, 139);
 		panel_tour.add(panel_2);
 		
-		JLabel lblNomJoueur_1 = new JLabel("Nom Joueur 1-1");
-		lblNomJoueur_1.setBounds(10, 24, 100, 14);
-		panel_2.add(lblNomJoueur_1);
+		JLabel lbl_m1_j1 = new JLabel("Nom Joueur 1-1");
+		lbl_m1_j1.setBounds(10, 24, 100, 14);
+		panel_2.add(lbl_m1_j1);
 		
-		JLabel label_1 = new JLabel("Score Joueur 1");
-		label_1.setBounds(120, 37, 100, 14);
-		panel_2.add(label_1);
+		JLabel lbl_m1_s1 = new JLabel("Score Joueur 1");
+		lbl_m1_s1.setBounds(120, 37, 100, 14);
+		panel_2.add(lbl_m1_s1);
 		
-		JLabel label_2 = new JLabel("Score Joueur 2");
-		label_2.setBounds(120, 74, 100, 14);
-		panel_2.add(label_2);
+		JLabel lbl_m1_s2 = new JLabel("Score Joueur 2");
+		lbl_m1_s2.setBounds(120, 74, 100, 14);
+		panel_2.add(lbl_m1_s2);
 		
-		JLabel lblNomJoueur = new JLabel("Nom Joueur 1-2");
-		lblNomJoueur.setBounds(10, 37, 100, 14);
-		panel_2.add(lblNomJoueur);
+		JLabel lbl_m1_j2 = new JLabel("Nom Joueur 1-2");
+		lbl_m1_j2.setBounds(10, 37, 100, 14);
+		panel_2.add(lbl_m1_j2);
 		
-		JLabel label_4 = new JLabel("N\u00B0 du cour");
-		label_4.setBounds(10, 101, 100, 14);
-		panel_2.add(label_4);
+		JLabel lbl_m1_c = new JLabel("N\u00B0 du cour");
+		lbl_m1_c.setBounds(10, 101, 100, 14);
+		panel_2.add(lbl_m1_c);
 		
-		JLabel label_5 = new JLabel("Date du match");
-		label_5.setBounds(10, 114, 100, 14);
-		panel_2.add(label_5);
+		JLabel lbl_m1_d = new JLabel("Date du match");
+		lbl_m1_d.setBounds(10, 114, 100, 14);
+		panel_2.add(lbl_m1_d);
 		
-		JLabel label_6 = new JLabel("Nom de l'Arbitre");
-		label_6.setBounds(120, 101, 100, 14);
-		panel_2.add(label_6);
+		JLabel lbl_m1_a = new JLabel("Nom de l'Arbitre");
+		lbl_m1_a.setBounds(120, 101, 100, 14);
+		panel_2.add(lbl_m1_a);
 		
-		JLabel label_7 = new JLabel("Heure du match");
-		label_7.setBounds(120, 114, 100, 14);
-		panel_2.add(label_7);
+		JLabel lbl_m1_h = new JLabel("Heure du match");
+		lbl_m1_h.setBounds(120, 114, 100, 14);
+		panel_2.add(lbl_m1_h);
 		
-		JLabel label_8 = new JLabel("N\u00B0 match");
-		label_8.setBounds(85, 11, 48, 14);
-		panel_2.add(label_8);
+		JLabel lbl_m1 = new JLabel("N\u00B0 match");
+		lbl_m1.setBounds(85, 11, 48, 14);
+		panel_2.add(lbl_m1);
 		
-		JLabel lblNomJoueur_3 = new JLabel("Nom Joueur 2-2");
-		lblNomJoueur_3.setBounds(10, 75, 100, 14);
-		panel_2.add(lblNomJoueur_3);
+		JLabel lbl_m1_j4 = new JLabel("Nom Joueur 2-2");
+		lbl_m1_j4.setBounds(10, 75, 100, 14);
+		panel_2.add(lbl_m1_j4);
 		
-		JLabel lblNomJoueur_2 = new JLabel("Nom Joueur 2-1");
-		lblNomJoueur_2.setBounds(10, 62, 100, 14);
-		panel_2.add(lblNomJoueur_2);
+		JLabel lbl_m1_j3 = new JLabel("Nom Joueur 2-1");
+		lbl_m1_j3.setBounds(10, 62, 100, 14);
+		panel_2.add(lbl_m1_j3);
 		
 		JPanel panel = new JPanel();
 		panel.setLayout(null);
 		panel.setBounds(262, 11, 228, 139);
 		panel_tour.add(panel);
 		
-		JLabel label = new JLabel("Nom Joueur 1-1");
-		label.setBounds(10, 24, 100, 14);
-		panel.add(label);
+		JLabel lbl_m2_j1 = new JLabel("Nom Joueur 1-1");
+		lbl_m2_j1.setBounds(10, 24, 100, 14);
+		panel.add(lbl_m2_j1);
 		
-		JLabel label_3 = new JLabel("Score Joueur 1");
-		label_3.setBounds(120, 37, 100, 14);
-		panel.add(label_3);
+		JLabel lbl_m2_s1 = new JLabel("Score Joueur 1");
+		lbl_m2_s1.setBounds(120, 37, 100, 14);
+		panel.add(lbl_m2_s1);
 		
-		JLabel label_9 = new JLabel("Score Joueur 2");
-		label_9.setBounds(120, 74, 100, 14);
-		panel.add(label_9);
+		JLabel lbl_m2_s2 = new JLabel("Score Joueur 2");
+		lbl_m2_s2.setBounds(120, 74, 100, 14);
+		panel.add(lbl_m2_s2);
 		
-		JLabel label_10 = new JLabel("Nom Joueur 1-2");
-		label_10.setBounds(10, 37, 100, 14);
-		panel.add(label_10);
+		JLabel lbl_m2_j2 = new JLabel("Nom Joueur 1-2");
+		lbl_m2_j2.setBounds(10, 37, 100, 14);
+		panel.add(lbl_m2_j2);
 		
-		JLabel label_11 = new JLabel("N\u00B0 du cour");
-		label_11.setBounds(10, 101, 100, 14);
-		panel.add(label_11);
+		JLabel lbl_m2_c = new JLabel("N\u00B0 du cour");
+		lbl_m2_c.setBounds(10, 101, 100, 14);
+		panel.add(lbl_m2_c);
 		
-		JLabel label_12 = new JLabel("Date du match");
-		label_12.setBounds(10, 114, 100, 14);
-		panel.add(label_12);
+		JLabel lbl_m2_d = new JLabel("Date du match");
+		lbl_m2_d.setBounds(10, 114, 100, 14);
+		panel.add(lbl_m2_d);
 		
-		JLabel label_13 = new JLabel("Nom de l'Arbitre");
-		label_13.setBounds(120, 101, 100, 14);
-		panel.add(label_13);
+		JLabel lbl_m2_a = new JLabel("Nom de l'Arbitre");
+		lbl_m2_a.setBounds(120, 101, 100, 14);
+		panel.add(lbl_m2_a);
 		
-		JLabel label_14 = new JLabel("Heure du match");
-		label_14.setBounds(120, 114, 100, 14);
-		panel.add(label_14);
+		JLabel lbl_m2_h = new JLabel("Heure du match");
+		lbl_m2_h.setBounds(120, 114, 100, 14);
+		panel.add(lbl_m2_h);
 		
-		JLabel label_15 = new JLabel("N\u00B0 match");
-		label_15.setBounds(85, 11, 48, 14);
-		panel.add(label_15);
+		JLabel lbl_m2 = new JLabel("N\u00B0 match");
+		lbl_m2.setBounds(85, 11, 48, 14);
+		panel.add(lbl_m2);
 		
-		JLabel label_16 = new JLabel("Nom Joueur 2-2");
-		label_16.setBounds(10, 75, 100, 14);
-		panel.add(label_16);
+		JLabel lbl_m2_j4 = new JLabel("Nom Joueur 2-2");
+		lbl_m2_j4.setBounds(10, 75, 100, 14);
+		panel.add(lbl_m2_j4);
 		
-		JLabel label_17 = new JLabel("Nom Joueur 2-1");
-		label_17.setBounds(10, 62, 100, 14);
-		panel.add(label_17);
+		JLabel lbl_m2_j3 = new JLabel("Nom Joueur 2-1");
+		lbl_m2_j3.setBounds(10, 62, 100, 14);
+		panel.add(lbl_m2_j3);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setLayout(null);
 		panel_1.setBounds(738, 11, 228, 139);
 		panel_tour.add(panel_1);
 		
-		JLabel label_18 = new JLabel("Nom Joueur 1-1");
-		label_18.setBounds(10, 24, 100, 14);
-		panel_1.add(label_18);
+		JLabel lbl_m4_j1 = new JLabel("Nom Joueur 1-1");
+		lbl_m4_j1.setBounds(10, 24, 100, 14);
+		panel_1.add(lbl_m4_j1);
 		
-		JLabel label_19 = new JLabel("Score Joueur 1");
-		label_19.setBounds(120, 37, 100, 14);
-		panel_1.add(label_19);
+		JLabel lbl_m4_s1 = new JLabel("Score Joueur 1");
+		lbl_m4_s1.setBounds(120, 37, 100, 14);
+		panel_1.add(lbl_m4_s1);
 		
-		JLabel label_20 = new JLabel("Score Joueur 2");
-		label_20.setBounds(120, 74, 100, 14);
-		panel_1.add(label_20);
+		JLabel lbl_m4_s2 = new JLabel("Score Joueur 2");
+		lbl_m4_s2.setBounds(120, 74, 100, 14);
+		panel_1.add(lbl_m4_s2);
 		
-		JLabel label_21 = new JLabel("Nom Joueur 1-2");
-		label_21.setBounds(10, 37, 100, 14);
-		panel_1.add(label_21);
+		JLabel lbl_m4_j2 = new JLabel("Nom Joueur 1-2");
+		lbl_m4_j2.setBounds(10, 37, 100, 14);
+		panel_1.add(lbl_m4_j2);
 		
-		JLabel label_22 = new JLabel("N\u00B0 du cour");
-		label_22.setBounds(10, 101, 100, 14);
-		panel_1.add(label_22);
+		JLabel lbl_m4_c = new JLabel("N\u00B0 du cour");
+		lbl_m4_c.setBounds(10, 101, 100, 14);
+		panel_1.add(lbl_m4_c);
 		
-		JLabel label_23 = new JLabel("Date du match");
-		label_23.setBounds(10, 114, 100, 14);
-		panel_1.add(label_23);
+		JLabel lbl_m4_d = new JLabel("Date du match");
+		lbl_m4_d.setBounds(10, 114, 100, 14);
+		panel_1.add(lbl_m4_d);
 		
-		JLabel label_24 = new JLabel("Nom de l'Arbitre");
-		label_24.setBounds(120, 101, 100, 14);
-		panel_1.add(label_24);
+		JLabel lbl_m4_a = new JLabel("Nom de l'Arbitre");
+		lbl_m4_a.setBounds(120, 101, 100, 14);
+		panel_1.add(lbl_m4_a);
 		
-		JLabel label_25 = new JLabel("Heure du match");
-		label_25.setBounds(120, 114, 100, 14);
-		panel_1.add(label_25);
+		JLabel lbl_m4_h = new JLabel("Heure du match");
+		lbl_m4_h.setBounds(120, 114, 100, 14);
+		panel_1.add(lbl_m4_h);
 		
-		JLabel label_26 = new JLabel("N\u00B0 match");
-		label_26.setBounds(85, 11, 48, 14);
-		panel_1.add(label_26);
+		JLabel lbl_m4 = new JLabel("N\u00B0 match");
+		lbl_m4.setBounds(85, 11, 48, 14);
+		panel_1.add(lbl_m4);
 		
-		JLabel label_27 = new JLabel("Nom Joueur 2-2");
-		label_27.setBounds(10, 75, 100, 14);
-		panel_1.add(label_27);
+		JLabel lbl_m4_j4 = new JLabel("Nom Joueur 2-2");
+		lbl_m4_j4.setBounds(10, 75, 100, 14);
+		panel_1.add(lbl_m4_j4);
 		
-		JLabel label_28 = new JLabel("Nom Joueur 2-1");
-		label_28.setBounds(10, 62, 100, 14);
-		panel_1.add(label_28);
+		JLabel lbl_m4_j3 = new JLabel("Nom Joueur 2-1");
+		lbl_m4_j3.setBounds(10, 62, 100, 14);
+		panel_1.add(lbl_m4_j3);
 		
 		JPanel panel_3 = new JPanel();
 		panel_3.setLayout(null);
 		panel_3.setBounds(500, 11, 228, 139);
 		panel_tour.add(panel_3);
 		
-		JLabel label_29 = new JLabel("Nom Joueur 1-1");
-		label_29.setBounds(10, 24, 100, 14);
-		panel_3.add(label_29);
+		JLabel lbl_m3_j1 = new JLabel("Nom Joueur 1-1");
+		lbl_m3_j1.setBounds(10, 24, 100, 14);
+		panel_3.add(lbl_m3_j1);
 		
-		JLabel label_30 = new JLabel("Score Joueur 1");
-		label_30.setBounds(120, 37, 100, 14);
-		panel_3.add(label_30);
+		JLabel lbl_m3_s1 = new JLabel("Score Joueur 1");
+		lbl_m3_s1.setBounds(120, 37, 100, 14);
+		panel_3.add(lbl_m3_s1);
 		
-		JLabel label_31 = new JLabel("Score Joueur 2");
-		label_31.setBounds(120, 74, 100, 14);
-		panel_3.add(label_31);
+		JLabel lbl_m3_s2 = new JLabel("Score Joueur 2");
+		lbl_m3_s2.setBounds(120, 74, 100, 14);
+		panel_3.add(lbl_m3_s2);
 		
-		JLabel label_32 = new JLabel("Nom Joueur 1-2");
-		label_32.setBounds(10, 37, 100, 14);
-		panel_3.add(label_32);
+		JLabel lbl_m3_j2 = new JLabel("Nom Joueur 1-2");
+		lbl_m3_j2.setBounds(10, 37, 100, 14);
+		panel_3.add(lbl_m3_j2);
 		
-		JLabel label_33 = new JLabel("N\u00B0 du cour");
-		label_33.setBounds(10, 101, 100, 14);
-		panel_3.add(label_33);
+		JLabel lbl_m3_c = new JLabel("N\u00B0 du cour");
+		lbl_m3_c.setBounds(10, 101, 100, 14);
+		panel_3.add(lbl_m3_c);
 		
-		JLabel label_34 = new JLabel("Date du match");
-		label_34.setBounds(10, 114, 100, 14);
-		panel_3.add(label_34);
+		JLabel lbl_m3_d = new JLabel("Date du match");
+		lbl_m3_d.setBounds(10, 114, 100, 14);
+		panel_3.add(lbl_m3_d);
 		
-		JLabel label_35 = new JLabel("Nom de l'Arbitre");
-		label_35.setBounds(120, 101, 100, 14);
-		panel_3.add(label_35);
+		JLabel lbl_m3_a = new JLabel("Nom de l'Arbitre");
+		lbl_m3_a.setBounds(120, 101, 100, 14);
+		panel_3.add(lbl_m3_a);
 		
-		JLabel label_36 = new JLabel("Heure du match");
-		label_36.setBounds(120, 114, 100, 14);
-		panel_3.add(label_36);
+		JLabel lbl_m3_h = new JLabel("Heure du match");
+		lbl_m3_h.setBounds(120, 114, 100, 14);
+		panel_3.add(lbl_m3_h);
 		
-		JLabel label_37 = new JLabel("N\u00B0 match");
-		label_37.setBounds(85, 11, 48, 14);
-		panel_3.add(label_37);
+		JLabel lbl_m3 = new JLabel("N\u00B0 match");
+		lbl_m3.setBounds(85, 11, 48, 14);
+		panel_3.add(lbl_m3);
 		
-		JLabel label_38 = new JLabel("Nom Joueur 2-2");
-		label_38.setBounds(10, 75, 100, 14);
-		panel_3.add(label_38);
+		JLabel lbl_m3_j4 = new JLabel("Nom Joueur 2-2");
+		lbl_m3_j4.setBounds(10, 75, 100, 14);
+		panel_3.add(lbl_m3_j4);
 		
-		JLabel label_39 = new JLabel("Nom Joueur 2-1");
-		label_39.setBounds(10, 62, 100, 14);
-		panel_3.add(label_39);
+		JLabel lbl_m3_j3 = new JLabel("Nom Joueur 2-1");
+		lbl_m3_j3.setBounds(10, 62, 100, 14);
+		panel_3.add(lbl_m3_j3);
 		
 		JPanel panel_4 = new JPanel();
 		panel_4.setLayout(null);
 		panel_4.setBounds(738, 161, 228, 139);
 		panel_tour.add(panel_4);
 		
-		JLabel label_40 = new JLabel("Nom Joueur 1-1");
-		label_40.setBounds(10, 24, 100, 14);
-		panel_4.add(label_40);
+		JLabel lbl_m8_j1 = new JLabel("Nom Joueur 1-1");
+		lbl_m8_j1.setBounds(10, 24, 100, 14);
+		panel_4.add(lbl_m8_j1);
 		
-		JLabel label_41 = new JLabel("Score Joueur 1");
-		label_41.setBounds(120, 37, 100, 14);
-		panel_4.add(label_41);
+		JLabel lbl_m8_s1 = new JLabel("Score Joueur 1");
+		lbl_m8_s1.setBounds(120, 37, 100, 14);
+		panel_4.add(lbl_m8_s1);
 		
-		JLabel label_42 = new JLabel("Score Joueur 2");
-		label_42.setBounds(120, 74, 100, 14);
-		panel_4.add(label_42);
+		JLabel lbl_m8_s2 = new JLabel("Score Joueur 2");
+		lbl_m8_s2.setBounds(120, 74, 100, 14);
+		panel_4.add(lbl_m8_s2);
 		
-		JLabel label_43 = new JLabel("Nom Joueur 1-2");
-		label_43.setBounds(10, 37, 100, 14);
-		panel_4.add(label_43);
+		JLabel lbl_m8_j2 = new JLabel("Nom Joueur 1-2");
+		lbl_m8_j2.setBounds(10, 37, 100, 14);
+		panel_4.add(lbl_m8_j2);
 		
-		JLabel label_44 = new JLabel("N\u00B0 du cour");
-		label_44.setBounds(10, 101, 100, 14);
-		panel_4.add(label_44);
+		JLabel lbl_m8_c = new JLabel("N\u00B0 du cour");
+		lbl_m8_c.setBounds(10, 101, 100, 14);
+		panel_4.add(lbl_m8_c);
 		
-		JLabel label_45 = new JLabel("Date du match");
-		label_45.setBounds(10, 114, 100, 14);
-		panel_4.add(label_45);
+		JLabel lbl_m8_d = new JLabel("Date du match");
+		lbl_m8_d.setBounds(10, 114, 100, 14);
+		panel_4.add(lbl_m8_d);
 		
-		JLabel label_46 = new JLabel("Nom de l'Arbitre");
-		label_46.setBounds(120, 101, 100, 14);
-		panel_4.add(label_46);
+		JLabel lbl_m8_a = new JLabel("Nom de l'Arbitre");
+		lbl_m8_a.setBounds(120, 101, 100, 14);
+		panel_4.add(lbl_m8_a);
 		
-		JLabel label_47 = new JLabel("Heure du match");
-		label_47.setBounds(120, 114, 100, 14);
-		panel_4.add(label_47);
+		JLabel lbl_m8_h = new JLabel("Heure du match");
+		lbl_m8_h.setBounds(120, 114, 100, 14);
+		panel_4.add(lbl_m8_h);
 		
-		JLabel label_48 = new JLabel("N\u00B0 match");
-		label_48.setBounds(85, 11, 48, 14);
-		panel_4.add(label_48);
+		JLabel lbl_m8 = new JLabel("N\u00B0 match");
+		lbl_m8.setBounds(85, 11, 48, 14);
+		panel_4.add(lbl_m8);
 		
-		JLabel label_49 = new JLabel("Nom Joueur 2-2");
-		label_49.setBounds(10, 75, 100, 14);
-		panel_4.add(label_49);
+		JLabel lbl_m8_j4 = new JLabel("Nom Joueur 2-2");
+		lbl_m8_j4.setBounds(10, 75, 100, 14);
+		panel_4.add(lbl_m8_j4);
 		
-		JLabel label_50 = new JLabel("Nom Joueur 2-1");
-		label_50.setBounds(10, 62, 100, 14);
-		panel_4.add(label_50);
+		JLabel lbl_m8_j3 = new JLabel("Nom Joueur 2-1");
+		lbl_m8_j3.setBounds(10, 62, 100, 14);
+		panel_4.add(lbl_m8_j3);
 		
 		JPanel panel_5 = new JPanel();
 		panel_5.setLayout(null);
 		panel_5.setBounds(500, 161, 228, 139);
 		panel_tour.add(panel_5);
 		
-		JLabel label_51 = new JLabel("Nom Joueur 1-1");
-		label_51.setBounds(10, 24, 100, 14);
-		panel_5.add(label_51);
+		JLabel lbl_m7_j1 = new JLabel("Nom Joueur 1-1");
+		lbl_m7_j1.setBounds(10, 24, 100, 14);
+		panel_5.add(lbl_m7_j1);
 		
-		JLabel label_52 = new JLabel("Score Joueur 1");
-		label_52.setBounds(120, 37, 100, 14);
-		panel_5.add(label_52);
+		JLabel lbl_m7_s1 = new JLabel("Score Joueur 1");
+		lbl_m7_s1.setBounds(120, 37, 100, 14);
+		panel_5.add(lbl_m7_s1);
 		
-		JLabel label_53 = new JLabel("Score Joueur 2");
-		label_53.setBounds(120, 74, 100, 14);
-		panel_5.add(label_53);
+		JLabel lbl_m7_s2 = new JLabel("Score Joueur 2");
+		lbl_m7_s2.setBounds(120, 74, 100, 14);
+		panel_5.add(lbl_m7_s2);
 		
-		JLabel label_54 = new JLabel("Nom Joueur 1-2");
-		label_54.setBounds(10, 37, 100, 14);
-		panel_5.add(label_54);
+		JLabel lbl_m7_j2 = new JLabel("Nom Joueur 1-2");
+		lbl_m7_j2.setBounds(10, 37, 100, 14);
+		panel_5.add(lbl_m7_j2);
 		
-		JLabel label_55 = new JLabel("N\u00B0 du cour");
-		label_55.setBounds(10, 101, 100, 14);
-		panel_5.add(label_55);
+		JLabel lbl_m7_c = new JLabel("N\u00B0 du cour");
+		lbl_m7_c.setBounds(10, 101, 100, 14);
+		panel_5.add(lbl_m7_c);
 		
-		JLabel label_56 = new JLabel("Date du match");
-		label_56.setBounds(10, 114, 100, 14);
-		panel_5.add(label_56);
+		JLabel lbl_m7_d = new JLabel("Date du match");
+		lbl_m7_d.setBounds(10, 114, 100, 14);
+		panel_5.add(lbl_m7_d);
 		
-		JLabel label_57 = new JLabel("Nom de l'Arbitre");
-		label_57.setBounds(120, 101, 100, 14);
-		panel_5.add(label_57);
+		JLabel lbl_m7_a = new JLabel("Nom de l'Arbitre");
+		lbl_m7_a.setBounds(120, 101, 100, 14);
+		panel_5.add(lbl_m7_a);
 		
-		JLabel label_58 = new JLabel("Heure du match");
-		label_58.setBounds(120, 114, 100, 14);
-		panel_5.add(label_58);
+		JLabel lbl_m7_h = new JLabel("Heure du match");
+		lbl_m7_h.setBounds(120, 114, 100, 14);
+		panel_5.add(lbl_m7_h);
 		
-		JLabel label_59 = new JLabel("N\u00B0 match");
-		label_59.setBounds(85, 11, 48, 14);
-		panel_5.add(label_59);
+		JLabel lbl_m7 = new JLabel("N\u00B0 match");
+		lbl_m7.setBounds(85, 11, 48, 14);
+		panel_5.add(lbl_m7);
 		
-		JLabel label_60 = new JLabel("Nom Joueur 2-2");
-		label_60.setBounds(10, 75, 100, 14);
-		panel_5.add(label_60);
+		JLabel lbl_m7_j4 = new JLabel("Nom Joueur 2-2");
+		lbl_m7_j4.setBounds(10, 75, 100, 14);
+		panel_5.add(lbl_m7_j4);
 		
-		JLabel label_61 = new JLabel("Nom Joueur 2-1");
-		label_61.setBounds(10, 62, 100, 14);
-		panel_5.add(label_61);
+		JLabel lbl_m7_j3 = new JLabel("Nom Joueur 2-1");
+		lbl_m7_j3.setBounds(10, 62, 100, 14);
+		panel_5.add(lbl_m7_j3);
 		
 		JPanel panel_6 = new JPanel();
 		panel_6.setLayout(null);
 		panel_6.setBounds(262, 161, 228, 139);
 		panel_tour.add(panel_6);
 		
-		JLabel label_62 = new JLabel("Nom Joueur 1-1");
-		label_62.setBounds(10, 24, 100, 14);
-		panel_6.add(label_62);
+		JLabel lbl_m6_j1 = new JLabel("Nom Joueur 1-1");
+		lbl_m6_j1.setBounds(10, 24, 100, 14);
+		panel_6.add(lbl_m6_j1);
 		
-		JLabel label_63 = new JLabel("Score Joueur 1");
-		label_63.setBounds(120, 37, 100, 14);
-		panel_6.add(label_63);
+		JLabel lbl_m6_s1 = new JLabel("Score Joueur 1");
+		lbl_m6_s1.setBounds(120, 37, 100, 14);
+		panel_6.add(lbl_m6_s1);
 		
-		JLabel label_64 = new JLabel("Score Joueur 2");
-		label_64.setBounds(120, 74, 100, 14);
-		panel_6.add(label_64);
+		JLabel lbl_m6_s2 = new JLabel("Score Joueur 2");
+		lbl_m6_s2.setBounds(120, 74, 100, 14);
+		panel_6.add(lbl_m6_s2);
 		
-		JLabel label_65 = new JLabel("Nom Joueur 1-2");
-		label_65.setBounds(10, 37, 100, 14);
-		panel_6.add(label_65);
+		JLabel lbl_m6_j2 = new JLabel("Nom Joueur 1-2");
+		lbl_m6_j2.setBounds(10, 37, 100, 14);
+		panel_6.add(lbl_m6_j2);
 		
-		JLabel label_66 = new JLabel("N\u00B0 du cour");
-		label_66.setBounds(10, 101, 100, 14);
-		panel_6.add(label_66);
+		JLabel lbl_m6_c = new JLabel("N\u00B0 du cour");
+		lbl_m6_c.setBounds(10, 101, 100, 14);
+		panel_6.add(lbl_m6_c);
 		
-		JLabel label_67 = new JLabel("Date du match");
-		label_67.setBounds(10, 114, 100, 14);
-		panel_6.add(label_67);
+		JLabel lbl_m6_d = new JLabel("Date du match");
+		lbl_m6_d.setBounds(10, 114, 100, 14);
+		panel_6.add(lbl_m6_d);
 		
-		JLabel label_68 = new JLabel("Nom de l'Arbitre");
-		label_68.setBounds(120, 101, 100, 14);
-		panel_6.add(label_68);
+		JLabel lbl_m6_a = new JLabel("Nom de l'Arbitre");
+		lbl_m6_a.setBounds(120, 101, 100, 14);
+		panel_6.add(lbl_m6_a);
 		
-		JLabel label_69 = new JLabel("Heure du match");
-		label_69.setBounds(120, 114, 100, 14);
-		panel_6.add(label_69);
+		JLabel lbl_m6_h = new JLabel("Heure du match");
+		lbl_m6_h.setBounds(120, 114, 100, 14);
+		panel_6.add(lbl_m6_h);
 		
-		JLabel label_70 = new JLabel("N\u00B0 match");
-		label_70.setBounds(85, 11, 48, 14);
-		panel_6.add(label_70);
+		JLabel lbl_m6 = new JLabel("N\u00B0 match");
+		lbl_m6.setBounds(85, 11, 48, 14);
+		panel_6.add(lbl_m6);
 		
-		JLabel label_71 = new JLabel("Nom Joueur 2-2");
-		label_71.setBounds(10, 75, 100, 14);
-		panel_6.add(label_71);
+		JLabel lbl_m6_j4 = new JLabel("Nom Joueur 2-2");
+		lbl_m6_j4.setBounds(10, 75, 100, 14);
+		panel_6.add(lbl_m6_j4);
 		
-		JLabel label_72 = new JLabel("Nom Joueur 2-1");
-		label_72.setBounds(10, 62, 100, 14);
-		panel_6.add(label_72);
+		JLabel lbl_m6_j3 = new JLabel("Nom Joueur 2-1");
+		lbl_m6_j3.setBounds(10, 62, 100, 14);
+		panel_6.add(lbl_m6_j3);
 		
 		JPanel panel_7 = new JPanel();
 		panel_7.setLayout(null);
 		panel_7.setBounds(24, 161, 228, 139);
 		panel_tour.add(panel_7);
 		
-		JLabel label_73 = new JLabel("Nom Joueur 1-1");
-		label_73.setBounds(10, 24, 100, 14);
-		panel_7.add(label_73);
+		JLabel lbl_m5_j1 = new JLabel("Nom Joueur 1-1");
+		lbl_m5_j1.setBounds(10, 24, 100, 14);
+		panel_7.add(lbl_m5_j1);
 		
-		JLabel label_74 = new JLabel("Score Joueur 1");
-		label_74.setBounds(120, 37, 100, 14);
-		panel_7.add(label_74);
+		JLabel lbl_m5_s1 = new JLabel("Score Joueur 1");
+		lbl_m5_s1.setBounds(120, 37, 100, 14);
+		panel_7.add(lbl_m5_s1);
 		
-		JLabel label_75 = new JLabel("Score Joueur 2");
-		label_75.setBounds(120, 74, 100, 14);
-		panel_7.add(label_75);
+		JLabel lbl_m5_s2 = new JLabel("Score Joueur 2");
+		lbl_m5_s2.setBounds(120, 74, 100, 14);
+		panel_7.add(lbl_m5_s2);
 		
-		JLabel label_76 = new JLabel("Nom Joueur 1-2");
-		label_76.setBounds(10, 37, 100, 14);
-		panel_7.add(label_76);
+		JLabel lbl_m5_j2 = new JLabel("Nom Joueur 1-2");
+		lbl_m5_j2.setBounds(10, 37, 100, 14);
+		panel_7.add(lbl_m5_j2);
 		
-		JLabel label_77 = new JLabel("N\u00B0 du cour");
-		label_77.setBounds(10, 101, 100, 14);
-		panel_7.add(label_77);
+		JLabel lbl_m5_c = new JLabel("N\u00B0 du cour");
+		lbl_m5_c.setBounds(10, 101, 100, 14);
+		panel_7.add(lbl_m5_c);
 		
-		JLabel label_78 = new JLabel("Date du match");
-		label_78.setBounds(10, 114, 100, 14);
-		panel_7.add(label_78);
+		JLabel lbl_m5_d = new JLabel("Date du match");
+		lbl_m5_d.setBounds(10, 114, 100, 14);
+		panel_7.add(lbl_m5_d);
 		
-		JLabel label_79 = new JLabel("Nom de l'Arbitre");
-		label_79.setBounds(120, 101, 100, 14);
-		panel_7.add(label_79);
+		JLabel lbl_m5_a = new JLabel("Nom de l'Arbitre");
+		lbl_m5_a.setBounds(120, 101, 100, 14);
+		panel_7.add(lbl_m5_a);
 		
-		JLabel label_80 = new JLabel("Heure du match");
-		label_80.setBounds(120, 114, 100, 14);
-		panel_7.add(label_80);
+		JLabel lbl_m5_h = new JLabel("Heure du match");
+		lbl_m5_h.setBounds(120, 114, 100, 14);
+		panel_7.add(lbl_m5_h);
 		
-		JLabel label_81 = new JLabel("N\u00B0 match");
-		label_81.setBounds(85, 11, 48, 14);
-		panel_7.add(label_81);
+		JLabel lbl_m5 = new JLabel("N\u00B0 match");
+		lbl_m5.setBounds(85, 11, 48, 14);
+		panel_7.add(lbl_m5);
 		
-		JLabel label_82 = new JLabel("Nom Joueur 2-2");
-		label_82.setBounds(10, 75, 100, 14);
-		panel_7.add(label_82);
+		JLabel lbl_m5_j4 = new JLabel("Nom Joueur 2-2");
+		lbl_m5_j4.setBounds(10, 75, 100, 14);
+		panel_7.add(lbl_m5_j4);
 		
-		JLabel label_83 = new JLabel("Nom Joueur 2-1");
-		label_83.setBounds(10, 62, 100, 14);
-		panel_7.add(label_83);
+		JLabel lbl_m5_j3 = new JLabel("Nom Joueur 2-1");
+		lbl_m5_j3.setBounds(10, 62, 100, 14);
+		panel_7.add(lbl_m5_j3);
 		
 		JPanel panel_8 = new JPanel();
 		panel_8.setLayout(null);
 		panel_8.setBounds(738, 461, 228, 139);
 		panel_tour.add(panel_8);
 		
-		JLabel label_84 = new JLabel("Nom Joueur 1-1");
-		label_84.setBounds(10, 24, 100, 14);
-		panel_8.add(label_84);
+		JLabel lbl_m16_j1 = new JLabel("Nom Joueur 1-1");
+		lbl_m16_j1.setBounds(10, 24, 100, 14);
+		panel_8.add(lbl_m16_j1);
 		
-		JLabel label_85 = new JLabel("Score Joueur 1");
-		label_85.setBounds(120, 37, 100, 14);
-		panel_8.add(label_85);
+		JLabel lbl_m16_s1 = new JLabel("Score Joueur 1");
+		lbl_m16_s1.setBounds(120, 37, 100, 14);
+		panel_8.add(lbl_m16_s1);
 		
-		JLabel label_86 = new JLabel("Score Joueur 2");
-		label_86.setBounds(120, 74, 100, 14);
-		panel_8.add(label_86);
+		JLabel lbl_m16_s2 = new JLabel("Score Joueur 2");
+		lbl_m16_s2.setBounds(120, 74, 100, 14);
+		panel_8.add(lbl_m16_s2);
 		
-		JLabel label_87 = new JLabel("Nom Joueur 1-2");
-		label_87.setBounds(10, 37, 100, 14);
-		panel_8.add(label_87);
+		JLabel lbl_m16_j2 = new JLabel("Nom Joueur 1-2");
+		lbl_m16_j2.setBounds(10, 37, 100, 14);
+		panel_8.add(lbl_m16_j2);
 		
-		JLabel label_88 = new JLabel("N\u00B0 du cour");
-		label_88.setBounds(10, 101, 100, 14);
-		panel_8.add(label_88);
+		JLabel lbl_m16_c = new JLabel("N\u00B0 du cour");
+		lbl_m16_c.setBounds(10, 101, 100, 14);
+		panel_8.add(lbl_m16_c);
 		
-		JLabel label_89 = new JLabel("Date du match");
-		label_89.setBounds(10, 114, 100, 14);
-		panel_8.add(label_89);
+		JLabel lbl_m16_d = new JLabel("Date du match");
+		lbl_m16_d.setBounds(10, 114, 100, 14);
+		panel_8.add(lbl_m16_d);
 		
-		JLabel label_90 = new JLabel("Nom de l'Arbitre");
-		label_90.setBounds(120, 101, 100, 14);
-		panel_8.add(label_90);
+		JLabel lbl_m16_a = new JLabel("Nom de l'Arbitre");
+		lbl_m16_a.setBounds(120, 101, 100, 14);
+		panel_8.add(lbl_m16_a);
 		
-		JLabel label_91 = new JLabel("Heure du match");
-		label_91.setBounds(120, 114, 100, 14);
-		panel_8.add(label_91);
+		JLabel lbl_m16_h = new JLabel("Heure du match");
+		lbl_m16_h.setBounds(120, 114, 100, 14);
+		panel_8.add(lbl_m16_h);
 		
-		JLabel label_92 = new JLabel("N\u00B0 match");
-		label_92.setBounds(85, 11, 48, 14);
-		panel_8.add(label_92);
+		JLabel lbl_m16 = new JLabel("N\u00B0 match");
+		lbl_m16.setBounds(85, 11, 48, 14);
+		panel_8.add(lbl_m16);
 		
-		JLabel label_93 = new JLabel("Nom Joueur 2-2");
-		label_93.setBounds(10, 75, 100, 14);
-		panel_8.add(label_93);
+		JLabel lbl_m16_j4 = new JLabel("Nom Joueur 2-2");
+		lbl_m16_j4.setBounds(10, 75, 100, 14);
+		panel_8.add(lbl_m16_j4);
 		
-		JLabel label_94 = new JLabel("Nom Joueur 2-1");
-		label_94.setBounds(10, 62, 100, 14);
-		panel_8.add(label_94);
+		JLabel lbl_m16_j3 = new JLabel("Nom Joueur 2-1");
+		lbl_m16_j3.setBounds(10, 62, 100, 14);
+		panel_8.add(lbl_m16_j3);
 		
 		JPanel panel_9 = new JPanel();
 		panel_9.setLayout(null);
 		panel_9.setBounds(500, 461, 228, 139);
 		panel_tour.add(panel_9);
 		
-		JLabel label_95 = new JLabel("Nom Joueur 1-1");
-		label_95.setBounds(10, 24, 100, 14);
-		panel_9.add(label_95);
+		JLabel lbl_m15_j1 = new JLabel("Nom Joueur 1-1");
+		lbl_m15_j1.setBounds(10, 24, 100, 14);
+		panel_9.add(lbl_m15_j1);
 		
-		JLabel label_96 = new JLabel("Score Joueur 1");
-		label_96.setBounds(120, 37, 100, 14);
-		panel_9.add(label_96);
+		JLabel lbl_m15_s1 = new JLabel("Score Joueur 1");
+		lbl_m15_s1.setBounds(120, 37, 100, 14);
+		panel_9.add(lbl_m15_s1);
 		
-		JLabel label_97 = new JLabel("Score Joueur 2");
-		label_97.setBounds(120, 74, 100, 14);
-		panel_9.add(label_97);
+		JLabel lbl_m15_s2 = new JLabel("Score Joueur 2");
+		lbl_m15_s2.setBounds(120, 74, 100, 14);
+		panel_9.add(lbl_m15_s2);
 		
-		JLabel label_98 = new JLabel("Nom Joueur 1-2");
-		label_98.setBounds(10, 37, 100, 14);
-		panel_9.add(label_98);
+		JLabel lbl_m15_j2 = new JLabel("Nom Joueur 1-2");
+		lbl_m15_j2.setBounds(10, 37, 100, 14);
+		panel_9.add(lbl_m15_j2);
 		
-		JLabel label_99 = new JLabel("N\u00B0 du cour");
-		label_99.setBounds(10, 101, 100, 14);
-		panel_9.add(label_99);
+		JLabel lbl_m15_c = new JLabel("N\u00B0 du cour");
+		lbl_m15_c.setBounds(10, 101, 100, 14);
+		panel_9.add(lbl_m15_c);
 		
-		JLabel label_100 = new JLabel("Date du match");
-		label_100.setBounds(10, 114, 100, 14);
-		panel_9.add(label_100);
+		JLabel lbl_m15_d = new JLabel("Date du match");
+		lbl_m15_d.setBounds(10, 114, 100, 14);
+		panel_9.add(lbl_m15_d);
 		
-		JLabel label_101 = new JLabel("Nom de l'Arbitre");
-		label_101.setBounds(120, 101, 100, 14);
-		panel_9.add(label_101);
+		JLabel lbl_m15_a = new JLabel("Nom de l'Arbitre");
+		lbl_m15_a.setBounds(120, 101, 100, 14);
+		panel_9.add(lbl_m15_a);
 		
-		JLabel label_102 = new JLabel("Heure du match");
-		label_102.setBounds(120, 114, 100, 14);
-		panel_9.add(label_102);
+		JLabel lbl_m15_h = new JLabel("Heure du match");
+		lbl_m15_h.setBounds(120, 114, 100, 14);
+		panel_9.add(lbl_m15_h);
 		
-		JLabel label_103 = new JLabel("N\u00B0 match");
-		label_103.setBounds(85, 11, 48, 14);
-		panel_9.add(label_103);
+		JLabel lbl_m15 = new JLabel("N\u00B0 match");
+		lbl_m15.setBounds(85, 11, 48, 14);
+		panel_9.add(lbl_m15);
 		
-		JLabel label_104 = new JLabel("Nom Joueur 2-2");
-		label_104.setBounds(10, 75, 100, 14);
-		panel_9.add(label_104);
+		JLabel lbl_m15_j4 = new JLabel("Nom Joueur 2-2");
+		lbl_m15_j4.setBounds(10, 75, 100, 14);
+		panel_9.add(lbl_m15_j4);
 		
-		JLabel label_105 = new JLabel("Nom Joueur 2-1");
-		label_105.setBounds(10, 62, 100, 14);
-		panel_9.add(label_105);
+		JLabel lbl_m15_j3 = new JLabel("Nom Joueur 2-1");
+		lbl_m15_j3.setBounds(10, 62, 100, 14);
+		panel_9.add(lbl_m15_j3);
 		
 		JPanel panel_10 = new JPanel();
 		panel_10.setLayout(null);
 		panel_10.setBounds(262, 461, 228, 139);
 		panel_tour.add(panel_10);
 		
-		JLabel label_106 = new JLabel("Nom Joueur 1-1");
-		label_106.setBounds(10, 24, 100, 14);
-		panel_10.add(label_106);
+		JLabel lbl_m14_j1 = new JLabel("Nom Joueur 1-1");
+		lbl_m14_j1.setBounds(10, 24, 100, 14);
+		panel_10.add(lbl_m14_j1);
 		
-		JLabel label_107 = new JLabel("Score Joueur 1");
-		label_107.setBounds(120, 37, 100, 14);
-		panel_10.add(label_107);
+		JLabel lbl_m14_s1 = new JLabel("Score Joueur 1");
+		lbl_m14_s1.setBounds(120, 37, 100, 14);
+		panel_10.add(lbl_m14_s1);
 		
-		JLabel label_108 = new JLabel("Score Joueur 2");
-		label_108.setBounds(120, 74, 100, 14);
-		panel_10.add(label_108);
+		JLabel lbl_m14_s2 = new JLabel("Score Joueur 2");
+		lbl_m14_s2.setBounds(120, 74, 100, 14);
+		panel_10.add(lbl_m14_s2);
 		
-		JLabel label_109 = new JLabel("Nom Joueur 1-2");
-		label_109.setBounds(10, 37, 100, 14);
-		panel_10.add(label_109);
+		JLabel lbl_m14_j2 = new JLabel("Nom Joueur 1-2");
+		lbl_m14_j2.setBounds(10, 37, 100, 14);
+		panel_10.add(lbl_m14_j2);
 		
-		JLabel label_110 = new JLabel("N\u00B0 du cour");
-		label_110.setBounds(10, 101, 100, 14);
-		panel_10.add(label_110);
+		JLabel lbl_m14_c = new JLabel("N\u00B0 du cour");
+		lbl_m14_c.setBounds(10, 101, 100, 14);
+		panel_10.add(lbl_m14_c);
 		
-		JLabel label_111 = new JLabel("Date du match");
-		label_111.setBounds(10, 114, 100, 14);
-		panel_10.add(label_111);
+		JLabel lbl_m14_d = new JLabel("Date du match");
+		lbl_m14_d.setBounds(10, 114, 100, 14);
+		panel_10.add(lbl_m14_d);
 		
-		JLabel label_112 = new JLabel("Nom de l'Arbitre");
-		label_112.setBounds(120, 101, 100, 14);
-		panel_10.add(label_112);
+		JLabel lbl_m14_a = new JLabel("Nom de l'Arbitre");
+		lbl_m14_a.setBounds(120, 101, 100, 14);
+		panel_10.add(lbl_m14_a);
 		
-		JLabel label_113 = new JLabel("Heure du match");
-		label_113.setBounds(120, 114, 100, 14);
-		panel_10.add(label_113);
+		JLabel lbl_m14_h = new JLabel("Heure du match");
+		lbl_m14_h.setBounds(120, 114, 100, 14);
+		panel_10.add(lbl_m14_h);
 		
-		JLabel label_114 = new JLabel("N\u00B0 match");
-		label_114.setBounds(85, 11, 48, 14);
-		panel_10.add(label_114);
+		JLabel lbl_m14 = new JLabel("N\u00B0 match");
+		lbl_m14.setBounds(85, 11, 48, 14);
+		panel_10.add(lbl_m14);
 		
-		JLabel label_115 = new JLabel("Nom Joueur 2-2");
-		label_115.setBounds(10, 75, 100, 14);
-		panel_10.add(label_115);
+		JLabel lbl_m14_j4 = new JLabel("Nom Joueur 2-2");
+		lbl_m14_j4.setBounds(10, 75, 100, 14);
+		panel_10.add(lbl_m14_j4);
 		
-		JLabel label_116 = new JLabel("Nom Joueur 2-1");
-		label_116.setBounds(10, 62, 100, 14);
-		panel_10.add(label_116);
+		JLabel lbl_m14_j3 = new JLabel("Nom Joueur 2-1");
+		lbl_m14_j3.setBounds(10, 62, 100, 14);
+		panel_10.add(lbl_m14_j3);
 		
 		JPanel panel_11 = new JPanel();
 		panel_11.setLayout(null);
 		panel_11.setBounds(24, 461, 228, 139);
 		panel_tour.add(panel_11);
 		
-		JLabel label_117 = new JLabel("Nom Joueur 1-1");
-		label_117.setBounds(10, 24, 100, 14);
-		panel_11.add(label_117);
+		JLabel lbl_m13_j1 = new JLabel("Nom Joueur 1-1");
+		lbl_m13_j1.setBounds(10, 24, 100, 14);
+		panel_11.add(lbl_m13_j1);
 		
-		JLabel label_118 = new JLabel("Score Joueur 1");
-		label_118.setBounds(120, 37, 100, 14);
-		panel_11.add(label_118);
+		JLabel lbl_m13_s1 = new JLabel("Score Joueur 1");
+		lbl_m13_s1.setBounds(120, 37, 100, 14);
+		panel_11.add(lbl_m13_s1);
 		
-		JLabel label_119 = new JLabel("Score Joueur 2");
-		label_119.setBounds(120, 74, 100, 14);
-		panel_11.add(label_119);
+		JLabel lbl_m13_s2 = new JLabel("Score Joueur 2");
+		lbl_m13_s2.setBounds(120, 74, 100, 14);
+		panel_11.add(lbl_m13_s2);
 		
-		JLabel label_120 = new JLabel("Nom Joueur 1-2");
-		label_120.setBounds(10, 37, 100, 14);
-		panel_11.add(label_120);
+		JLabel lbl_m13_j2 = new JLabel("Nom Joueur 1-2");
+		lbl_m13_j2.setBounds(10, 37, 100, 14);
+		panel_11.add(lbl_m13_j2);
 		
-		JLabel label_121 = new JLabel("N\u00B0 du cour");
-		label_121.setBounds(10, 101, 100, 14);
-		panel_11.add(label_121);
+		JLabel lbl_m13_c = new JLabel("N\u00B0 du cour");
+		lbl_m13_c.setBounds(10, 101, 100, 14);
+		panel_11.add(lbl_m13_c);
 		
-		JLabel label_122 = new JLabel("Date du match");
-		label_122.setBounds(10, 114, 100, 14);
-		panel_11.add(label_122);
+		JLabel lbl_m13_d = new JLabel("Date du match");
+		lbl_m13_d.setBounds(10, 114, 100, 14);
+		panel_11.add(lbl_m13_d);
 		
-		JLabel label_123 = new JLabel("Nom de l'Arbitre");
-		label_123.setBounds(120, 101, 100, 14);
-		panel_11.add(label_123);
+		JLabel lbl_m13_a = new JLabel("Nom de l'Arbitre");
+		lbl_m13_a.setBounds(120, 101, 100, 14);
+		panel_11.add(lbl_m13_a);
 		
-		JLabel label_124 = new JLabel("Heure du match");
-		label_124.setBounds(120, 114, 100, 14);
-		panel_11.add(label_124);
+		JLabel lbl_m13_h = new JLabel("Heure du match");
+		lbl_m13_h.setBounds(120, 114, 100, 14);
+		panel_11.add(lbl_m13_h);
 		
-		JLabel label_125 = new JLabel("N\u00B0 match");
-		label_125.setBounds(85, 11, 48, 14);
-		panel_11.add(label_125);
+		JLabel lbl_m13 = new JLabel("N\u00B0 match");
+		lbl_m13.setBounds(85, 11, 48, 14);
+		panel_11.add(lbl_m13);
 		
-		JLabel label_126 = new JLabel("Nom Joueur 2-2");
-		label_126.setBounds(10, 75, 100, 14);
-		panel_11.add(label_126);
+		JLabel lbl_m13_j4 = new JLabel("Nom Joueur 2-2");
+		lbl_m13_j4.setBounds(10, 75, 100, 14);
+		panel_11.add(lbl_m13_j4);
 		
-		JLabel label_127 = new JLabel("Nom Joueur 2-1");
-		label_127.setBounds(10, 62, 100, 14);
-		panel_11.add(label_127);
+		JLabel lbl_m13_j3 = new JLabel("Nom Joueur 2-1");
+		lbl_m13_j3.setBounds(10, 62, 100, 14);
+		panel_11.add(lbl_m13_j3);
 		
 		JPanel panel_12 = new JPanel();
 		panel_12.setLayout(null);
 		panel_12.setBounds(24, 311, 228, 139);
 		panel_tour.add(panel_12);
 		
-		JLabel label_128 = new JLabel("Nom Joueur 1-1");
-		label_128.setBounds(10, 24, 100, 14);
-		panel_12.add(label_128);
+		JLabel lbl_m9_j1 = new JLabel("Nom Joueur 1-1");
+		lbl_m9_j1.setBounds(10, 24, 100, 14);
+		panel_12.add(lbl_m9_j1);
 		
-		JLabel label_129 = new JLabel("Score Joueur 1");
-		label_129.setBounds(120, 37, 100, 14);
-		panel_12.add(label_129);
+		JLabel lbl_m9_s1 = new JLabel("Score Joueur 1");
+		lbl_m9_s1.setBounds(120, 37, 100, 14);
+		panel_12.add(lbl_m9_s1);
 		
-		JLabel label_130 = new JLabel("Score Joueur 2");
-		label_130.setBounds(120, 74, 100, 14);
-		panel_12.add(label_130);
+		JLabel lbl_m9_s2 = new JLabel("Score Joueur 2");
+		lbl_m9_s2.setBounds(120, 74, 100, 14);
+		panel_12.add(lbl_m9_s2);
 		
-		JLabel label_131 = new JLabel("Nom Joueur 1-2");
-		label_131.setBounds(10, 37, 100, 14);
-		panel_12.add(label_131);
+		JLabel lbl_m9_j2 = new JLabel("Nom Joueur 1-2");
+		lbl_m9_j2.setBounds(10, 37, 100, 14);
+		panel_12.add(lbl_m9_j2);
 		
-		JLabel label_132 = new JLabel("N\u00B0 du cour");
-		label_132.setBounds(10, 101, 100, 14);
-		panel_12.add(label_132);
+		JLabel lbl_m9_c = new JLabel("N\u00B0 du cour");
+		lbl_m9_c.setBounds(10, 101, 100, 14);
+		panel_12.add(lbl_m9_c);
 		
-		JLabel label_133 = new JLabel("Date du match");
-		label_133.setBounds(10, 114, 100, 14);
-		panel_12.add(label_133);
+		JLabel lbl_m9_d = new JLabel("Date du match");
+		lbl_m9_d.setBounds(10, 114, 100, 14);
+		panel_12.add(lbl_m9_d);
 		
-		JLabel label_134 = new JLabel("Nom de l'Arbitre");
-		label_134.setBounds(120, 101, 100, 14);
-		panel_12.add(label_134);
+		JLabel lbl_m9_a = new JLabel("Nom de l'Arbitre");
+		lbl_m9_a.setBounds(120, 101, 100, 14);
+		panel_12.add(lbl_m9_a);
 		
-		JLabel label_135 = new JLabel("Heure du match");
-		label_135.setBounds(120, 114, 100, 14);
-		panel_12.add(label_135);
+		JLabel lbl_m9_h = new JLabel("Heure du match");
+		lbl_m9_h.setBounds(120, 114, 100, 14);
+		panel_12.add(lbl_m9_h);
 		
-		JLabel label_136 = new JLabel("N\u00B0 match");
-		label_136.setBounds(85, 11, 48, 14);
-		panel_12.add(label_136);
+		JLabel lbl_m9 = new JLabel("N\u00B0 match");
+		lbl_m9.setBounds(85, 11, 48, 14);
+		panel_12.add(lbl_m9);
 		
-		JLabel label_137 = new JLabel("Nom Joueur 2-2");
-		label_137.setBounds(10, 75, 100, 14);
-		panel_12.add(label_137);
+		JLabel lbl_m9_j4 = new JLabel("Nom Joueur 2-2");
+		lbl_m9_j4.setBounds(10, 75, 100, 14);
+		panel_12.add(lbl_m9_j4);
 		
-		JLabel label_138 = new JLabel("Nom Joueur 2-1");
-		label_138.setBounds(10, 62, 100, 14);
-		panel_12.add(label_138);
+		JLabel lbl_m9_j3 = new JLabel("Nom Joueur 2-1");
+		lbl_m9_j3.setBounds(10, 62, 100, 14);
+		panel_12.add(lbl_m9_j3);
 		
 		JPanel panel_13 = new JPanel();
 		panel_13.setLayout(null);
 		panel_13.setBounds(262, 311, 228, 139);
 		panel_tour.add(panel_13);
 		
-		JLabel label_139 = new JLabel("Nom Joueur 1-1");
-		label_139.setBounds(10, 24, 100, 14);
-		panel_13.add(label_139);
+		JLabel lbl_m10_j1 = new JLabel("Nom Joueur 1-1");
+		lbl_m10_j1.setBounds(10, 24, 100, 14);
+		panel_13.add(lbl_m10_j1);
 		
-		JLabel label_140 = new JLabel("Score Joueur 1");
-		label_140.setBounds(120, 37, 100, 14);
-		panel_13.add(label_140);
+		JLabel lbl_m10_s1 = new JLabel("Score Joueur 1");
+		lbl_m10_s1.setBounds(120, 37, 100, 14);
+		panel_13.add(lbl_m10_s1);
 		
-		JLabel label_141 = new JLabel("Score Joueur 2");
-		label_141.setBounds(120, 74, 100, 14);
-		panel_13.add(label_141);
+		JLabel lbl_m10_s2 = new JLabel("Score Joueur 2");
+		lbl_m10_s2.setBounds(120, 74, 100, 14);
+		panel_13.add(lbl_m10_s2);
 		
-		JLabel label_142 = new JLabel("Nom Joueur 1-2");
-		label_142.setBounds(10, 37, 100, 14);
-		panel_13.add(label_142);
+		JLabel lbl_m10_j2 = new JLabel("Nom Joueur 1-2");
+		lbl_m10_j2.setBounds(10, 37, 100, 14);
+		panel_13.add(lbl_m10_j2);
 		
-		JLabel label_143 = new JLabel("N\u00B0 du cour");
-		label_143.setBounds(10, 101, 100, 14);
-		panel_13.add(label_143);
+		JLabel lbl_m10_c = new JLabel("N\u00B0 du cour");
+		lbl_m10_c.setBounds(10, 101, 100, 14);
+		panel_13.add(lbl_m10_c);
 		
-		JLabel label_144 = new JLabel("Date du match");
-		label_144.setBounds(10, 114, 100, 14);
-		panel_13.add(label_144);
+		JLabel lbl_m10_d = new JLabel("Date du match");
+		lbl_m10_d.setBounds(10, 114, 100, 14);
+		panel_13.add(lbl_m10_d);
 		
-		JLabel label_145 = new JLabel("Nom de l'Arbitre");
-		label_145.setBounds(120, 101, 100, 14);
-		panel_13.add(label_145);
+		JLabel lbl_m10_a = new JLabel("Nom de l'Arbitre");
+		lbl_m10_a.setBounds(120, 101, 100, 14);
+		panel_13.add(lbl_m10_a);
 		
-		JLabel label_146 = new JLabel("Heure du match");
-		label_146.setBounds(120, 114, 100, 14);
-		panel_13.add(label_146);
+		JLabel lbl_m10_h = new JLabel("Heure du match");
+		lbl_m10_h.setBounds(120, 114, 100, 14);
+		panel_13.add(lbl_m10_h);
 		
-		JLabel label_147 = new JLabel("N\u00B0 match");
-		label_147.setBounds(85, 11, 48, 14);
-		panel_13.add(label_147);
+		JLabel lbl_m10 = new JLabel("N\u00B0 match");
+		lbl_m10.setBounds(85, 11, 48, 14);
+		panel_13.add(lbl_m10);
 		
-		JLabel label_148 = new JLabel("Nom Joueur 2-2");
-		label_148.setBounds(10, 75, 100, 14);
-		panel_13.add(label_148);
+		JLabel lbl_m10_j4 = new JLabel("Nom Joueur 2-2");
+		lbl_m10_j4.setBounds(10, 75, 100, 14);
+		panel_13.add(lbl_m10_j4);
 		
-		JLabel label_149 = new JLabel("Nom Joueur 2-1");
-		label_149.setBounds(10, 62, 100, 14);
-		panel_13.add(label_149);
+		JLabel lbl_m10_j3 = new JLabel("Nom Joueur 2-1");
+		lbl_m10_j3.setBounds(10, 62, 100, 14);
+		panel_13.add(lbl_m10_j3);
 		
 		JPanel panel_14 = new JPanel();
 		panel_14.setLayout(null);
 		panel_14.setBounds(500, 311, 228, 139);
 		panel_tour.add(panel_14);
 		
-		JLabel label_150 = new JLabel("Nom Joueur 1-1");
-		label_150.setBounds(10, 24, 100, 14);
-		panel_14.add(label_150);
+		JLabel lbl_m11_j1 = new JLabel("Nom Joueur 1-1");
+		lbl_m11_j1.setBounds(10, 24, 100, 14);
+		panel_14.add(lbl_m11_j1);
 		
-		JLabel label_151 = new JLabel("Score Joueur 1");
-		label_151.setBounds(120, 37, 100, 14);
-		panel_14.add(label_151);
+		JLabel lbl_m11_s1 = new JLabel("Score Joueur 1");
+		lbl_m11_s1.setBounds(120, 37, 100, 14);
+		panel_14.add(lbl_m11_s1);
 		
-		JLabel label_152 = new JLabel("Score Joueur 2");
-		label_152.setBounds(120, 74, 100, 14);
-		panel_14.add(label_152);
+		JLabel lbl_m11_s2 = new JLabel("Score Joueur 2");
+		lbl_m11_s2.setBounds(120, 74, 100, 14);
+		panel_14.add(lbl_m11_s2);
 		
-		JLabel label_153 = new JLabel("Nom Joueur 1-2");
-		label_153.setBounds(10, 37, 100, 14);
-		panel_14.add(label_153);
+		JLabel lbl_m11_j2 = new JLabel("Nom Joueur 1-2");
+		lbl_m11_j2.setBounds(10, 37, 100, 14);
+		panel_14.add(lbl_m11_j2);
 		
-		JLabel label_154 = new JLabel("N\u00B0 du cour");
-		label_154.setBounds(10, 101, 100, 14);
-		panel_14.add(label_154);
+		JLabel lbl_m11_c = new JLabel("N\u00B0 du cour");
+		lbl_m11_c.setBounds(10, 101, 100, 14);
+		panel_14.add(lbl_m11_c);
 		
-		JLabel label_155 = new JLabel("Date du match");
-		label_155.setBounds(10, 114, 100, 14);
-		panel_14.add(label_155);
+		JLabel lbl_m11_d = new JLabel("Date du match");
+		lbl_m11_d.setBounds(10, 114, 100, 14);
+		panel_14.add(lbl_m11_d);
 		
-		JLabel label_156 = new JLabel("Nom de l'Arbitre");
-		label_156.setBounds(120, 101, 100, 14);
-		panel_14.add(label_156);
+		JLabel lbl_m11_a = new JLabel("Nom de l'Arbitre");
+		lbl_m11_a.setBounds(120, 101, 100, 14);
+		panel_14.add(lbl_m11_a);
 		
-		JLabel label_157 = new JLabel("Heure du match");
-		label_157.setBounds(120, 114, 100, 14);
-		panel_14.add(label_157);
+		JLabel lbl_m11_h = new JLabel("Heure du match");
+		lbl_m11_h.setBounds(120, 114, 100, 14);
+		panel_14.add(lbl_m11_h);
 		
-		JLabel label_158 = new JLabel("N\u00B0 match");
-		label_158.setBounds(85, 11, 48, 14);
-		panel_14.add(label_158);
+		JLabel lbl_m11 = new JLabel("N\u00B0 match");
+		lbl_m11.setBounds(85, 11, 48, 14);
+		panel_14.add(lbl_m11);
 		
-		JLabel label_159 = new JLabel("Nom Joueur 2-2");
-		label_159.setBounds(10, 75, 100, 14);
-		panel_14.add(label_159);
+		JLabel lbl_m11_j4 = new JLabel("Nom Joueur 2-2");
+		lbl_m11_j4.setBounds(10, 75, 100, 14);
+		panel_14.add(lbl_m11_j4);
 		
-		JLabel label_160 = new JLabel("Nom Joueur 2-1");
-		label_160.setBounds(10, 62, 100, 14);
-		panel_14.add(label_160);
+		JLabel lbl_m11_j3 = new JLabel("Nom Joueur 2-1");
+		lbl_m11_j3.setBounds(10, 62, 100, 14);
+		panel_14.add(lbl_m11_j3);
 		
 		JPanel panel_15 = new JPanel();
 		panel_15.setLayout(null);
 		panel_15.setBounds(738, 311, 228, 139);
 		panel_tour.add(panel_15);
 		
-		JLabel label_161 = new JLabel("Nom Joueur 1-1");
-		label_161.setBounds(10, 24, 100, 14);
-		panel_15.add(label_161);
+		JLabel lbl_m12_j1 = new JLabel("Nom Joueur 1-1");
+		lbl_m12_j1.setBounds(10, 24, 100, 14);
+		panel_15.add(lbl_m12_j1);
 		
-		JLabel label_162 = new JLabel("Score Joueur 1");
-		label_162.setBounds(120, 37, 100, 14);
-		panel_15.add(label_162);
+		JLabel lbl_m12_s1 = new JLabel("Score Joueur 1");
+		lbl_m12_s1.setBounds(120, 37, 100, 14);
+		panel_15.add(lbl_m12_s1);
 		
-		JLabel label_163 = new JLabel("Score Joueur 2");
-		label_163.setBounds(120, 74, 100, 14);
-		panel_15.add(label_163);
+		JLabel lbl_m12_s2 = new JLabel("Score Joueur 2");
+		lbl_m12_s2.setBounds(120, 74, 100, 14);
+		panel_15.add(lbl_m12_s2);
 		
-		JLabel label_164 = new JLabel("Nom Joueur 1-2");
-		label_164.setBounds(10, 37, 100, 14);
-		panel_15.add(label_164);
+		JLabel lbl_m12_j2 = new JLabel("Nom Joueur 1-2");
+		lbl_m12_j2.setBounds(10, 37, 100, 14);
+		panel_15.add(lbl_m12_j2);
 		
-		JLabel label_165 = new JLabel("N\u00B0 du cour");
-		label_165.setBounds(10, 101, 100, 14);
-		panel_15.add(label_165);
+		JLabel lbl_m12_c = new JLabel("N\u00B0 du cour");
+		lbl_m12_c.setBounds(10, 101, 100, 14);
+		panel_15.add(lbl_m12_c);
 		
-		JLabel label_166 = new JLabel("Date du match");
-		label_166.setBounds(10, 114, 100, 14);
-		panel_15.add(label_166);
+		JLabel lbl_m12_d = new JLabel("Date du match");
+		lbl_m12_d.setBounds(10, 114, 100, 14);
+		panel_15.add(lbl_m12_d);
 		
-		JLabel label_167 = new JLabel("Nom de l'Arbitre");
-		label_167.setBounds(120, 101, 100, 14);
-		panel_15.add(label_167);
+		JLabel lbl_m12_a = new JLabel("Nom de l'Arbitre");
+		lbl_m12_a.setBounds(120, 101, 100, 14);
+		panel_15.add(lbl_m12_a);
 		
-		JLabel label_168 = new JLabel("Heure du match");
-		label_168.setBounds(120, 114, 100, 14);
-		panel_15.add(label_168);
+		JLabel lbl_m12_h = new JLabel("Heure du match");
+		lbl_m12_h.setBounds(120, 114, 100, 14);
+		panel_15.add(lbl_m12_h);
 		
-		JLabel label_169 = new JLabel("N\u00B0 match");
-		label_169.setBounds(85, 11, 48, 14);
-		panel_15.add(label_169);
+		JLabel lbl_m12 = new JLabel("N\u00B0 match");
+		lbl_m12.setBounds(85, 11, 48, 14);
+		panel_15.add(lbl_m12);
 		
-		JLabel label_170 = new JLabel("Nom Joueur 2-2");
-		label_170.setBounds(10, 75, 100, 14);
-		panel_15.add(label_170);
+		JLabel lbl_m12_j4 = new JLabel("Nom Joueur 2-2");
+		lbl_m12_j4.setBounds(10, 75, 100, 14);
+		panel_15.add(lbl_m12_j4);
 		
-		JLabel label_171 = new JLabel("Nom Joueur 2-1");
-		label_171.setBounds(10, 62, 100, 14);
-		panel_15.add(label_171);
+		JLabel lbl_m12_j3 = new JLabel("Nom Joueur 2-1");
+		lbl_m12_j3.setBounds(10, 62, 100, 14);
+		panel_15.add(lbl_m12_j3);
 		
 		JPanel panel_menu = new JPanel();
 		panel_menu.setLayout(null);
@@ -861,5 +861,15 @@ public class JFDouble extends JFrame {
 		
 		JMenuItem menu_finale8 = new JMenuItem("8/Finale - Finale");
 		menu_final.add(menu_finale8);
+		
+		JLabel[] t_matchs = new JLabel[]{lbl_m1,lbl_m2,lbl_m3,lbl_m4,lbl_m5,lbl_m6,lbl_m7,lbl_m8,lbl_m9,lbl_m10,lbl_m11,lbl_m12,lbl_m13,lbl_m14,lbl_m15,lbl_m16};
+		JLabel[] t_joueurs1 = new JLabel[]{lbl_m1_j1,lbl_m2_j1,lbl_m3_j1,lbl_m4_j1,lbl_m5_j1,lbl_m6_j1,lbl_m7_j1,lbl_m8_j1,lbl_m9_j1,lbl_m10_j1,lbl_m11_j1,lbl_m12_j1,lbl_m13_j1,lbl_m14_j1,lbl_m15_j1,lbl_m16_j1};
+		JLabel[] t_joueurs2 = new JLabel[]{lbl_m1_j2,lbl_m2_j2,lbl_m3_j2,lbl_m4_j2,lbl_m5_j2,lbl_m6_j2,lbl_m7_j2,lbl_m8_j2,lbl_m9_j2,lbl_m10_j2,lbl_m11_j2,lbl_m12_j2,lbl_m13_j2,lbl_m14_j2,lbl_m15_j2,lbl_m16_j2};
+		JLabel[] t_arbitres = new JLabel[]{lbl_m1_a,lbl_m2_a,lbl_m3_a,lbl_m4_a,lbl_m5_a,lbl_m6_a,lbl_m7_a,lbl_m8_a,lbl_m9_a,lbl_m10_a,lbl_m11_a,lbl_m12_a,lbl_m13_a,lbl_m14_a,lbl_m15_a,lbl_m16_a};
+		JLabel[] t_cours = new JLabel[]{lbl_m1_c,lbl_m2_c,lbl_m3_c,lbl_m4_c,lbl_m5_c,lbl_m6_c,lbl_m7_c,lbl_m8_c,lbl_m9_c,lbl_m10_c,lbl_m11_c,lbl_m12_c,lbl_m13_c,lbl_m14_c,lbl_m15_c,lbl_m16_c};
+		JLabel[] t_dates = new JLabel[]{lbl_m1_d,lbl_m2_d,lbl_m3_d,lbl_m4_d,lbl_m5_d,lbl_m6_d,lbl_m7_d,lbl_m8_d,lbl_m9_d,lbl_m10_d,lbl_m11_d,lbl_m12_d,lbl_m13_d,lbl_m14_d,lbl_m15_d,lbl_m16_d};
+		JLabel[] t_heures = new JLabel[]{lbl_m1_h,lbl_m2_h,lbl_m3_h,lbl_m4_h,lbl_m5_h,lbl_m6_h,lbl_m7_h,lbl_m8_h,lbl_m9_h,lbl_m10_h,lbl_m11_h,lbl_m12_h,lbl_m13_h,lbl_m14_h,lbl_m15_h,lbl_m16_h};
+		JLabel[] t_score1 = new JLabel[]{lbl_m1_s1,lbl_m2_s1,lbl_m3_s1,lbl_m4_s1,lbl_m5_s1,lbl_m6_s1,lbl_m7_s1,lbl_m8_s1,lbl_m9_s1,lbl_m10_s1,lbl_m11_s1,lbl_m12_s1,lbl_m13_s1,lbl_m14_s1,lbl_m15_s1,lbl_m16_s1};
+		JLabel[] t_score2 = new JLabel[]{lbl_m1_s2,lbl_m2_s2,lbl_m3_s2,lbl_m4_s2,lbl_m5_s2,lbl_m6_s2,lbl_m7_s2,lbl_m8_s2,lbl_m9_s2,lbl_m10_s2,lbl_m11_s2,lbl_m12_s2,lbl_m13_s2,lbl_m14_s2,lbl_m15_s2,lbl_m16_s2};
 	}
 }
