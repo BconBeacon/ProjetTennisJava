@@ -11,10 +11,10 @@ public class TournoiPOJO {
 	private OrdonnancementPOJO[] t_ordo;
 	
 	//Constructeurs******************************************************************************
-	public TournoiPOJO(EquipePOJO[] t_simpleHomme, EquipePOJO[] t_simpleDame, 
+	public TournoiPOJO(String nom, EquipePOJO[] t_simpleHomme, EquipePOJO[] t_simpleDame, 
 			EquipePOJO[] t_doubleHomme, EquipePOJO[] t_doubleDame, EquipePOJO[] t_doubleMixe)
 	{
-		nom = "Grand Slam - 2019";
+		this.nom = nom;
 		t_ordo = genererTournoi(t_simpleHomme, t_simpleDame, t_doubleHomme, t_doubleDame, t_doubleMixe);
 		assignerDates(CUAgenda.getInstance().getAgenda());
 	}
@@ -152,6 +152,43 @@ public class TournoiPOJO {
 		return vainqueurs;
 	}
 	
+	//Getters*******************************************************************************************
+	public String getNom()
+	{
+		return nom;
+	}
+	
+	public OrdonnancementPOJO getOrdonnancement(CUTypeMatch type)
+	{
+		switch(type)
+		{
+			case SH :
+			{
+				return t_ordo[0];
+			}
+			case SD :
+			{
+				return t_ordo[1];
+			}
+			case DH :
+			{
+				return t_ordo[2];
+			}
+			case DD :
+			{
+				return t_ordo[3];
+			}
+			case DM :
+			{
+				return t_ordo[4];
+			}
+			default :
+			{
+				return null;
+			}
+		}
+	}
+	
 	//Méthodes de tests*************************************************************************
 	public void afficherResultatsMatchs()
 	{
@@ -201,7 +238,7 @@ public class TournoiPOJO {
 			DM[i] = e3;
 		}
 		
-		TournoiPOJO tournoi = new TournoiPOJO(SH,SD,DH,DD,DM);
+		TournoiPOJO tournoi = new TournoiPOJO("Grand Slam - 2019",SH,SD,DH,DD,DM);
 		
 		EquipePOJO[][] vainqueurs = tournoi.genererResultatsTour();;	
 		tournoi.genererTourSuivant(vainqueurs);

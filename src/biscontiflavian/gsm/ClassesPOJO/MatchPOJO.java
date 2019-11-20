@@ -176,6 +176,41 @@ public class MatchPOJO {
 		}
 	}
 	
+	public String obtenirScoreEquipe(int numeroEquipe)
+	{
+		String score = "";
+		switch(numeroEquipe)
+		{
+			case 1 :
+			{
+				for(SetPOJO set : l_sets)
+				{
+					score += set.getPtsE1();
+					score += " ";
+				}
+				break;
+			}
+			case 2 :
+			{
+				for(SetPOJO set : l_sets)
+				{
+					score += set.getPtsE2();
+					score += " ";
+				}
+				break;
+			}
+			default :
+			{
+				for(SetPOJO set : l_sets)
+				{
+					score += "? ";
+					break;
+				}
+			}
+		}
+		return score;
+	}
+	
 	//Getters et Setters*******************************************************************************************
 	public EquipePOJO getVainqueur()
 	{
@@ -185,6 +220,46 @@ public class MatchPOJO {
 	public EquipePOJO[] getEquipes()
 	{
 		return t_equipes;
+	}
+	
+	public int getNumero()
+	{
+		return numero;
+	}
+	
+	public JoueurPOJO getJoueur1Equipe1()
+	{
+		return t_equipes[0].getJoueur1();
+	}
+	
+	public JoueurPOJO getJoueur1Equipe2()
+	{
+		return t_equipes[1].getJoueur1();
+	}
+	
+	public JoueurPOJO getJoueur2Equipe1()
+	{
+		return t_equipes[0].getJoueur2();
+	}
+	
+	public JoueurPOJO getJoueur2Equipe2()
+	{
+		return t_equipes[1].getJoueur2();
+	}
+	
+	public ArbitrePOJO getArbitre()
+	{
+		return arbitre;
+	}
+	
+	public CourPOJO getCour()
+	{
+		return cour;
+	}
+	
+	public CUDate getDate()
+	{
+		return date;
 	}
 	
 	public void setEquipes(EquipePOJO e1, EquipePOJO e2)

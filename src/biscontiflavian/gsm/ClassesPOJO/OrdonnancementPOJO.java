@@ -19,10 +19,12 @@ public class OrdonnancementPOJO {
 			case SH, SD :
 			{
 				t_matchs = new MatchPOJO[127];
+				break;
 			}
 			case DH, DD, DM :
 			{
 				t_matchs = new MatchPOJO[63];
+				break;
 			}
 		}
 		this.type = type;

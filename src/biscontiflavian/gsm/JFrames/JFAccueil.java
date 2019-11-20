@@ -6,6 +6,12 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.border.EmptyBorder;
+
+import biscontiflavian.gsm.ClassesPOJO.EquipePOJO;
+import biscontiflavian.gsm.ClassesPOJO.JoueurPOJO;
+import biscontiflavian.gsm.ClassesPOJO.TournoiPOJO;
+import biscontiflavian.gsm.ClassesUtilitaires.CUSexe;
+
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
@@ -43,6 +49,7 @@ public class JFAccueil extends JFrame {
 	 * Create the frame.
 	 */
 	public JFAccueil() {
+		//Configuration des composants graphiques******************************************************************************
 		JFAccueil frame = this;
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -92,7 +99,34 @@ public class JFAccueil extends JFrame {
 				{
 					if(txt_token.getText().equals(mdp))
 					{
-						JFTournoi newFrame = new JFTournoi();
+						//Création du tournoi**************************************************************************************
+						EquipePOJO[] SH = new EquipePOJO[128];
+						EquipePOJO[] SD = new EquipePOJO[128];
+						EquipePOJO[] DH = new EquipePOJO[64];
+						EquipePOJO[] DD = new EquipePOJO[64];
+						EquipePOJO[] DM = new EquipePOJO[64];
+						
+						for(int i=0;i<128;i++)
+						{
+							EquipePOJO e1 = new EquipePOJO(new JoueurPOJO[] {new JoueurPOJO("Joueur"+(i+1), "M", i+1, CUSexe.M)});
+							EquipePOJO e2 = new EquipePOJO(new JoueurPOJO[] {new JoueurPOJO("Joueur"+(i+1), "F", i+1, CUSexe.F)});
+							SH[i] = e1;
+							SD[i] = e2;
+						}
+						
+						for(int i=0;i<64;i++)
+						{
+							EquipePOJO e1 = new EquipePOJO(new JoueurPOJO[] {new JoueurPOJO("Joueur"+(i+1), "M", i+1, CUSexe.M),new JoueurPOJO("Joueur"+(i+1), "M", i+1, CUSexe.M)});
+							EquipePOJO e2 = new EquipePOJO(new JoueurPOJO[] {new JoueurPOJO("Joueur"+(i+1), "F", i+1, CUSexe.F),new JoueurPOJO("Joueur"+(i+1), "F", i+1, CUSexe.F)});
+							EquipePOJO e3 = new EquipePOJO(new JoueurPOJO[] {new JoueurPOJO("Joueur"+(i+1), "F", i+1, CUSexe.F),new JoueurPOJO("Joueur"+(i+1), "M", i+1, CUSexe.M)});
+							DH[i] = e1;
+							DD[i] = e2;
+							DM[i] = e3;
+						}
+						
+						TournoiPOJO tournoi = new TournoiPOJO(txt_tournoi.getText(),SH,SD,DH,DD,DM);
+						
+						JFTournoi newFrame = new JFTournoi(tournoi);
 						newFrame.show();
 						frame.dispose();
 					}

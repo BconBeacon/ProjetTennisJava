@@ -5,10 +5,19 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import biscontiflavian.gsm.ClassesPOJO.EquipePOJO;
+import biscontiflavian.gsm.ClassesPOJO.JoueurPOJO;
+import biscontiflavian.gsm.ClassesPOJO.TournoiPOJO;
+import biscontiflavian.gsm.ClassesUtilitaires.CUSexe;
+import biscontiflavian.gsm.ClassesUtilitaires.CUTypeEquipe;
+import biscontiflavian.gsm.ClassesUtilitaires.CUTypeMatch;
+
 import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.time.LocalDate;
 
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
@@ -16,6 +25,7 @@ import javax.swing.JButton;
 public class JFTournoi extends JFrame {
 	private static final long serialVersionUID = -3788870959857009959L;
 	private JPanel contentPane;
+	private static TournoiPOJO tournoi;
 
 	/**
 	 * Launch the application.
@@ -24,7 +34,7 @@ public class JFTournoi extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					JFTournoi frame = new JFTournoi();
+					JFTournoi frame = new JFTournoi(tournoi);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -36,8 +46,10 @@ public class JFTournoi extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public JFTournoi() {
+	public JFTournoi(TournoiPOJO tournoi) {
+		//Configuration des composants graphiques******************************************************************************
 		JFTournoi frame = this;
+		this.tournoi = tournoi;
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -46,7 +58,7 @@ public class JFTournoi extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lbl_tournoi = new JLabel("Nom Tournoi - Date");
+		JLabel lbl_tournoi = new JLabel(tournoi.getNom() + "  - " + LocalDate.now().getYear());
 		lbl_tournoi.setHorizontalAlignment(SwingConstants.CENTER);
 		lbl_tournoi.setFont(new Font("Times New Roman", Font.PLAIN, 18));
 		lbl_tournoi.setBounds(10, 11, 414, 35);
@@ -65,22 +77,62 @@ public class JFTournoi extends JFrame {
 		contentPane.add(lbl_double);
 		
 		JButton btn_sh = new JButton("Homme");
+		btn_sh.addMouseListener(new MouseAdapter() {
+			@SuppressWarnings("deprecation")
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				JFSimple newFrame = new JFSimple(tournoi.getOrdonnancement(CUTypeMatch.SH));
+				newFrame.show();
+			}
+		});
 		btn_sh.setBounds(90, 106, 80, 25);
 		contentPane.add(btn_sh);
 		
 		JButton btn_sd = new JButton("Dame");
+		btn_sd.addMouseListener(new MouseAdapter() {
+			@SuppressWarnings("deprecation")
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				JFSimple newFrame = new JFSimple(tournoi.getOrdonnancement(CUTypeMatch.SD));
+				newFrame.show();
+			}
+		});
 		btn_sd.setBounds(90, 142, 80, 25);
 		contentPane.add(btn_sd);
 		
 		JButton btn_dh = new JButton("Homme");
+		btn_dh.addMouseListener(new MouseAdapter() {
+			@SuppressWarnings("deprecation")
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				JFDouble newFrame = new JFDouble(tournoi.getOrdonnancement(CUTypeMatch.DH));
+				newFrame.show();
+			}
+		});
 		btn_dh.setBounds(266, 106, 80, 25);
 		contentPane.add(btn_dh);
 		
 		JButton btn_dd = new JButton("Dame");
+		btn_dd.addMouseListener(new MouseAdapter() {
+			@SuppressWarnings("deprecation")
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				JFDouble newFrame = new JFDouble(tournoi.getOrdonnancement(CUTypeMatch.DD));
+				newFrame.show();
+			}
+		});
 		btn_dd.setBounds(266, 142, 80, 25);
 		contentPane.add(btn_dd);
 		
 		JButton btn_dm = new JButton("Mixte");
+		btn_dm.addMouseListener(new MouseAdapter() {
+			@SuppressWarnings("deprecation")
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				JFDouble newFrame = new JFDouble(tournoi.getOrdonnancement(CUTypeMatch.DM));
+				newFrame.show();
+			}
+		});
 		btn_dm.setBounds(266, 178, 80, 25);
 		contentPane.add(btn_dm);
 		
@@ -109,6 +161,6 @@ public class JFTournoi extends JFrame {
 		
 		JButton btn_tour = new JButton("G\u00E9n\u00E9rer tour suivant");
 		btn_tour.setBounds(130, 227, 189, 23);
-		contentPane.add(btn_tour);
+		contentPane.add(btn_tour);				
 	}
 }

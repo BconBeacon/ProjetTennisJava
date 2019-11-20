@@ -4,9 +4,11 @@ import biscontiflavian.gsm.ClassesUtilitaires.CUSexe;
 import biscontiflavian.gsm.ClassesUtilitaires.CUTypeEquipe;
 
 public class EquipePOJO {
+	//Attributs*****************************************************************************
 	private JoueurPOJO[] t_joueurs;
 	private CUTypeEquipe type;
 	
+	//Constructeurs******************************************************************************
 	public EquipePOJO(JoueurPOJO[] t_j)
 	{
 		t_joueurs = new JoueurPOJO[t_j.length];
@@ -25,6 +27,7 @@ public class EquipePOJO {
 		}
 	}
 	
+	//Méthodes***************************************************************************************************
 	public int obtenirNiveauEquipe()
 	{
 		int niveau = 0;
@@ -35,6 +38,18 @@ public class EquipePOJO {
 		return niveau;
 	}
 	
+	//Getters*****************************************************************************************************
+	public JoueurPOJO getJoueur1()
+	{
+		return t_joueurs[0];
+	}
+	
+	public JoueurPOJO getJoueur2()
+	{
+		return t_joueurs[1];
+	}
+	
+	//Méthodes de test*********************************************************************************************
 	public void afficherJoueurs()
 	{
 		for(JoueurPOJO j : t_joueurs)
