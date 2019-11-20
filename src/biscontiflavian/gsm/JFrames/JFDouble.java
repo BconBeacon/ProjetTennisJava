@@ -1,5 +1,6 @@
 package biscontiflavian.gsm.JFrames;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -13,8 +14,13 @@ import java.awt.Font;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.JMenuBar;
 
 public class JFDouble extends JFrame {
 
@@ -874,24 +880,54 @@ public class JFDouble extends JFrame {
 		btn_fermer.setBounds(10, 11, 77, 23);
 		panel_menu.add(btn_fermer);
 		
+		JMenuBar menuBar = new JMenuBar();
+		menuBar.setBounds(380, 13, 210, 22);
+		panel_menu.add(menuBar);
+		
 		JMenu mnToursliminatoires = new JMenu("Tours \u00E9liminatoires");
-		mnToursliminatoires.setBounds(228, 11, 200, 26);
-		panel_menu.add(mnToursliminatoires);
+		menuBar.add(mnToursliminatoires);
 		
 		JMenuItem menu_t1_p1 = new JMenuItem("Matchs 01 - 16");
+		menu_t1_p1.addActionListener(new ActionListener()
+				{
+					public void actionPerformed(ActionEvent e)
+					{
+						afficherResultats(0,15);
+					}
+				});
 		mnToursliminatoires.add(menu_t1_p1);
 		
 		JMenuItem menu_t1_p2 = new JMenuItem("Matchs 17 - 32");
+		menu_t1_p2.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				afficherResultats(16,31);
+			}
+		});
 		mnToursliminatoires.add(menu_t1_p2);
 		
 		JMenu menu_final = new JMenu("Tours finaux");
-		menu_final.setBounds(438, 11, 152, 26);
-		panel_menu.add(menu_final);
+		menuBar.add(menu_final);
 		
 		JMenuItem menu_final16 = new JMenuItem("16/Finale");
+		menu_final16.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				afficherResultats(32,47);
+			}
+		});
 		menu_final.add(menu_final16);
 		
 		JMenuItem menu_finale8 = new JMenuItem("8/Finale - Finale");
+		menu_finale8.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				afficherResultats(48,62);
+			}
+		});
 		menu_final.add(menu_finale8);
 		
 		//Affichage des matchs************************************************************************************************************************
@@ -915,14 +951,58 @@ public class JFDouble extends JFrame {
 		{
 			MatchPOJO[] matchs = new MatchPOJO[borneSup-borneInf+1];
 			System.arraycopy(ordo.getMatchs(), borneInf, matchs, 0, matchs.length);
-					
+						
 			for(int i=0;i<matchs.length;i++)
 			{
+				//Vérifier si des équipes sont déjà assignées au match
 				t_matchs[i].setText("Match " + matchs[i].getNumero());
-				t_joueurs1[i].setText(matchs[i].getJoueur1Equipe1().toString());
-				t_joueurs2[i].setText(matchs[i].getJoueur2Equipe1().toString());
-				t_joueurs3[i].setText(matchs[i].getJoueur1Equipe2().toString());
-				t_joueurs4[i].setText(matchs[i].getJoueur2Equipe2().toString());
+				if(matchs[i].getEquipes() != null)
+				{
+					t_joueurs1[i].setText(matchs[i].getJoueur1Equipe1().toString());
+					t_joueurs2[i].setText(matchs[i].getJoueur2Equipe1().toString());
+					t_joueurs3[i].setText(matchs[i].getJoueur1Equipe2().toString());
+					t_joueurs4[i].setText(matchs[i].getJoueur2Equipe2().toString());
+				}
+				else
+				{
+					t_joueurs1[i].setText("NON-ASSIGNE");
+					t_joueurs2[i].setText("NON-ASSIGNE");
+					t_joueurs3[i].setText("NON-ASSIGNE");
+					t_joueurs4[i].setText("NON-ASSIGNE");
+				}
+				
+				//Code couleur noir/gris pour gagnant/perdant du match
+				if(matchs[i].getVainqueur() != null)
+				{
+					if(matchs[i].getVainqueur().equals(matchs[i].getEquipe1()))
+					{
+						t_joueurs1[i].setForeground(Color.BLACK);
+						t_joueurs2[i].setForeground(Color.BLACK);
+						t_scores1[i].setForeground(Color.BLACK);
+						t_joueurs3[i].setForeground(Color.GRAY);
+						t_joueurs4[i].setForeground(Color.GRAY);
+						t_scores2[i].setForeground(Color.GRAY);
+					}
+					else
+					{
+						t_joueurs3[i].setForeground(Color.BLACK);
+						t_joueurs4[i].setForeground(Color.BLACK);
+						t_scores2[i].setForeground(Color.BLACK);
+						t_joueurs1[i].setForeground(Color.GRAY);
+						t_joueurs2[i].setForeground(Color.GRAY);
+						t_scores1[i].setForeground(Color.GRAY);
+					}
+				}
+				else
+				{
+					t_joueurs3[i].setForeground(Color.GRAY);
+					t_joueurs4[i].setForeground(Color.GRAY);
+					t_scores2[i].setForeground(Color.GRAY);
+					t_joueurs1[i].setForeground(Color.GRAY);
+					t_joueurs2[i].setForeground(Color.GRAY);
+					t_scores1[i].setForeground(Color.GRAY);
+				}
+				
 				//t_arbitres[i].setText(matchs[i].getArbitre().toString());
 				//t_cours[i].setText(matchs[i].getCour().toString());
 				t_dates[i].setText(matchs[i].getDate().obtenirDate());

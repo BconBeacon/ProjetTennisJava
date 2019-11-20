@@ -227,6 +227,11 @@ public class MatchPOJO {
 		return numero;
 	}
 	
+	public EquipePOJO getEquipe1()
+	{
+		return t_equipes[0];
+	}
+	
 	public JoueurPOJO getJoueur1Equipe1()
 	{
 		return t_equipes[0].getJoueur1();

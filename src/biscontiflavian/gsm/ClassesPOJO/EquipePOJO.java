@@ -38,6 +38,28 @@ public class EquipePOJO {
 		return niveau;
 	}
 	
+	//Surcharges de méthodes***********************************************************************************
+	public String toString()
+	{
+		String s = "";
+		for(JoueurPOJO j : t_joueurs)
+		{
+			s += j.toString();
+		}
+		return s;
+	}
+	
+	public boolean equals(Object o)
+	{
+		if(o instanceof EquipePOJO)
+		{
+			EquipePOJO e = (EquipePOJO)o;
+			if((e.toString()).equals(this.toString())) return true;
+			else return false;
+		}
+		else return false;
+	}
+	
 	//Getters*****************************************************************************************************
 	public JoueurPOJO getJoueur1()
 	{

@@ -14,6 +14,8 @@ import biscontiflavian.gsm.ClassesUtilitaires.CUTypeEquipe;
 import biscontiflavian.gsm.ClassesUtilitaires.CUTypeMatch;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -26,6 +28,7 @@ public class JFTournoi extends JFrame {
 	private static final long serialVersionUID = -3788870959857009959L;
 	private JPanel contentPane;
 	private static TournoiPOJO tournoi;
+	private int cpt = 0;
 
 	/**
 	 * Launch the application.
@@ -160,6 +163,20 @@ public class JFTournoi extends JFrame {
 		contentPane.add(btn_quitter);
 		
 		JButton btn_tour = new JButton("G\u00E9n\u00E9rer tour suivant");
+		btn_tour.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+				//Vérifier si le tournoi est terminé
+				if(cpt != 7)
+				{
+					tournoi.genererTourSuivant(tournoi.genererResultatsTour());
+					JOptionPane.showMessageDialog(null, "Tour généré avec succès");
+					cpt++;
+				}
+				else JOptionPane.showMessageDialog(null, "Le tournoi est terminé, plus de génération de tour possible");
+			}
+		});
 		btn_tour.setBounds(130, 227, 189, 23);
 		contentPane.add(btn_tour);				
 	}

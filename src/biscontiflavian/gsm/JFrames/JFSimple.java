@@ -1,5 +1,6 @@
 package biscontiflavian.gsm.JFrames;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -13,8 +14,13 @@ import java.awt.Font;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.JMenuBar;
 
 public class JFSimple extends JFrame {
 
@@ -79,40 +85,97 @@ public class JFSimple extends JFrame {
 		btn_fermer.setBounds(10, 11, 77, 23);
 		panel_menu.add(btn_fermer);
 		
+		JMenuBar menuBar = new JMenuBar();
+		menuBar.setBounds(326, 24, 355, 22);
+		panel_menu.add(menuBar);
+		
 		JMenu mnToursliminatoires = new JMenu("Tours \u00E9liminatoires 1");
-		mnToursliminatoires.setBounds(233, 11, 200, 26);
-		panel_menu.add(mnToursliminatoires);
+		menuBar.add(mnToursliminatoires);
 		
 		JMenuItem menu_t1_p1 = new JMenuItem("Matchs 01 - 16");
+		menu_t1_p1.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				afficherResultats(0,15);
+			}
+		});
 		mnToursliminatoires.add(menu_t1_p1);
 		
 		JMenuItem menu_t1_p2 = new JMenuItem("Matchs 17 - 32");
+		menu_t1_p2.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				afficherResultats(16,31);
+			}
+		});
 		mnToursliminatoires.add(menu_t1_p2);
 		
 		JMenuItem menu_t1_p3 = new JMenuItem("Matchs 33 - 48");
+		menu_t1_p3.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				afficherResultats(32,47);
+			}
+		});
 		mnToursliminatoires.add(menu_t1_p3);
 		
 		JMenuItem menu_t1_p4 = new JMenuItem("Matchs 49 - 64");
+		menu_t1_p4.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				afficherResultats(48,63);
+			}
+		});
 		mnToursliminatoires.add(menu_t1_p4);
 		
 		JMenu mnToursliminatoires_1 = new JMenu("Tours \u00E9liminatoires 2");
-		mnToursliminatoires_1.setBounds(443, 11, 200, 26);
-		panel_menu.add(mnToursliminatoires_1);
+		menuBar.add(mnToursliminatoires_1);
 		
 		JMenuItem menu_t2_p1 = new JMenuItem("Matchs 65 - 80");
+		menu_t2_p1.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				afficherResultats(64,79);
+			}
+		});
 		mnToursliminatoires_1.add(menu_t2_p1);
 		
 		JMenuItem menu_t2_p2 = new JMenuItem("Matchs 81 - 96");
+		menu_t2_p2.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				afficherResultats(80,95);
+			}
+		});
 		mnToursliminatoires_1.add(menu_t2_p2);
 		
 		JMenu menu_finale = new JMenu("Tours finaux");
-		menu_finale.setBounds(653, 11, 155, 26);
-		panel_menu.add(menu_finale);
+		menuBar.add(menu_finale);
 		
 		JMenuItem menu_finale16 = new JMenuItem("16/Finale");
+		menu_finale16.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				afficherResultats(96,111);
+			}
+		});
 		menu_finale.add(menu_finale16);
 		
 		JMenuItem menu_finale8 = new JMenuItem("8/Finale - Finale");
+		menu_finale8.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				afficherResultats(112,126);
+			}
+		});
 		menu_finale.add(menu_finale8);
 		
 		JPanel panel_tour = new JPanel();
@@ -158,7 +221,7 @@ public class JFSimple extends JFrame {
 		panel_1.add(lbl_h1);
 		
 		JLabel lbl_m1 = new JLabel("N\u00B0 match");
-		lbl_m1.setBounds(85, 11, 55, 14);
+		lbl_m1.setBounds(85, 11, 62, 14);
 		panel_1.add(lbl_m1);
 		
 		JPanel panel_2 = new JPanel();
@@ -199,7 +262,7 @@ public class JFSimple extends JFrame {
 		panel_2.add(lbl_h2);
 		
 		JLabel lbl_m2 = new JLabel("N\u00B0 match");
-		lbl_m2.setBounds(85, 11, 55, 14);
+		lbl_m2.setBounds(85, 11, 62, 14);
 		panel_2.add(lbl_m2);
 		
 		JPanel panel_3 = new JPanel();
@@ -240,7 +303,7 @@ public class JFSimple extends JFrame {
 		panel_3.add(lbl_h3);
 		
 		JLabel lbl_m3 = new JLabel("N\u00B0 match");
-		lbl_m3.setBounds(85, 11, 55, 14);
+		lbl_m3.setBounds(85, 11, 62, 14);
 		panel_3.add(lbl_m3);
 		
 		JPanel panel_4 = new JPanel();
@@ -281,7 +344,7 @@ public class JFSimple extends JFrame {
 		panel_4.add(lbl_h4);
 		
 		JLabel lbl_m4 = new JLabel("N\u00B0 match");
-		lbl_m4.setBounds(85, 11, 55, 14);
+		lbl_m4.setBounds(85, 11, 62, 14);
 		panel_4.add(lbl_m4);
 		
 		JPanel panel_5 = new JPanel();
@@ -322,7 +385,7 @@ public class JFSimple extends JFrame {
 		panel_5.add(lbl_h5);
 		
 		JLabel lbl_m5 = new JLabel("N\u00B0 match");
-		lbl_m5.setBounds(85, 11, 55, 14);
+		lbl_m5.setBounds(85, 11, 62, 14);
 		panel_5.add(lbl_m5);
 		
 		JPanel panel_6 = new JPanel();
@@ -363,7 +426,7 @@ public class JFSimple extends JFrame {
 		panel_6.add(lbl_h6);
 		
 		JLabel lbl_m6 = new JLabel("N\u00B0 match");
-		lbl_m6.setBounds(85, 11, 55, 14);
+		lbl_m6.setBounds(85, 11, 62, 14);
 		panel_6.add(lbl_m6);
 		
 		JPanel panel_7 = new JPanel();
@@ -404,7 +467,7 @@ public class JFSimple extends JFrame {
 		panel_7.add(lbl_h7);
 		
 		JLabel lbl_m7 = new JLabel("N\u00B0 match");
-		lbl_m7.setBounds(85, 11, 55, 14);
+		lbl_m7.setBounds(85, 11, 62, 14);
 		panel_7.add(lbl_m7);
 		
 		JPanel panel_8 = new JPanel();
@@ -445,7 +508,7 @@ public class JFSimple extends JFrame {
 		panel_8.add(lbl_h8);
 		
 		JLabel lbl_m8 = new JLabel("N\u00B0 match");
-		lbl_m8.setBounds(85, 11, 55, 14);
+		lbl_m8.setBounds(85, 11, 62, 14);
 		panel_8.add(lbl_m8);
 		
 		JPanel panel_9 = new JPanel();
@@ -486,7 +549,7 @@ public class JFSimple extends JFrame {
 		panel_9.add(lbl_h13);
 		
 		JLabel lbl_m13 = new JLabel("N\u00B0 match");
-		lbl_m13.setBounds(85, 11, 55, 14);
+		lbl_m13.setBounds(85, 11, 62, 14);
 		panel_9.add(lbl_m13);
 		
 		JPanel panel_10 = new JPanel();
@@ -527,7 +590,7 @@ public class JFSimple extends JFrame {
 		panel_10.add(lbl_h14);
 		
 		JLabel lbl_m14 = new JLabel("N\u00B0 match");
-		lbl_m14.setBounds(85, 11, 55, 14);
+		lbl_m14.setBounds(85, 11, 62, 14);
 		panel_10.add(lbl_m14);
 		
 		JPanel panel_11 = new JPanel();
@@ -568,7 +631,7 @@ public class JFSimple extends JFrame {
 		panel_11.add(lbl_h15);
 		
 		JLabel lbl_m15 = new JLabel("N\u00B0 match");
-		lbl_m15.setBounds(85, 11, 55, 14);
+		lbl_m15.setBounds(85, 11, 62, 14);
 		panel_11.add(lbl_m15);
 		
 		JPanel panel_finale = new JPanel();
@@ -610,7 +673,7 @@ public class JFSimple extends JFrame {
 		panel_finale.add(lbl_h16);
 		
 		JLabel lbl_m16 = new JLabel("N\u00B0 match");
-		lbl_m16.setBounds(85, 11, 55, 14);
+		lbl_m16.setBounds(85, 11, 62, 14);
 		panel_finale.add(lbl_m16);
 		
 		JPanel panel_13 = new JPanel();
@@ -651,7 +714,7 @@ public class JFSimple extends JFrame {
 		panel_13.add(lbl_h9);
 		
 		JLabel lbl_m9 = new JLabel("N\u00B0 match");
-		lbl_m9.setBounds(85, 11, 55, 14);
+		lbl_m9.setBounds(85, 11, 62, 14);
 		panel_13.add(lbl_m9);
 		
 		JPanel panel_14 = new JPanel();
@@ -692,7 +755,7 @@ public class JFSimple extends JFrame {
 		panel_14.add(lbl_h10);
 		
 		JLabel lbl_m10 = new JLabel("N\u00B0 match");
-		lbl_m10.setBounds(85, 11, 55, 14);
+		lbl_m10.setBounds(85, 11, 62, 14);
 		panel_14.add(lbl_m10);
 		
 		JPanel panel_15 = new JPanel();
@@ -733,7 +796,7 @@ public class JFSimple extends JFrame {
 		panel_15.add(lbl_h11);
 		
 		JLabel lbl_m11 = new JLabel("N\u00B0 match");
-		lbl_m11.setBounds(85, 11, 55, 14);
+		lbl_m11.setBounds(85, 11, 62, 14);
 		panel_15.add(lbl_m11);
 		
 		JPanel panel_16 = new JPanel();
@@ -774,7 +837,7 @@ public class JFSimple extends JFrame {
 		panel_16.add(lbl_h12);
 		
 		JLabel lbl_m12 = new JLabel("N\u00B0 match");
-		lbl_m12.setBounds(85, 11, 55, 14);
+		lbl_m12.setBounds(85, 11, 62, 14);
 		panel_16.add(lbl_m12);
 		
 		//Affichage des matchs************************************************************************************************************************
@@ -793,19 +856,55 @@ public class JFSimple extends JFrame {
 	
 	//Méthode d'affichage des résultats***************************************************************************************
 	private void afficherResultats(int borneInf, int borneSup)
-	{
+	{		
 		MatchPOJO[] matchs = new MatchPOJO[borneSup-borneInf+1];
 		System.arraycopy(ordo.getMatchs(), borneInf, matchs, 0, matchs.length);
 				
 		for(int i=0;i<matchs.length;i++)
 		{
+			//Vérifier si des équipes sont déjà assignées au match
 			t_matchs[i].setText("Match " + matchs[i].getNumero());
-			t_joueurs1[i].setText(matchs[i].getJoueur1Equipe1().toString());
-			t_joueurs2[i].setText(matchs[i].getJoueur1Equipe2().toString());
+			if(matchs[i].getEquipes() != null)
+			{
+				t_joueurs1[i].setText(matchs[i].getJoueur1Equipe1().toString());
+				t_joueurs2[i].setText(matchs[i].getJoueur1Equipe2().toString());
+			}
+			else
+			{
+				t_joueurs1[i].setText("NON-ASSIGNE");
+				t_joueurs2[i].setText("NON-ASSIGNE");
+			}
+			
+			//Code couleur noir/gris pour gagnant/perdant du match
+			if(matchs[i].getVainqueur() != null)
+			{
+				if(matchs[i].getVainqueur().equals(matchs[i].getEquipe1()))
+				{
+					t_joueurs1[i].setForeground(Color.BLACK);
+					t_scores1[i].setForeground(Color.BLACK);
+					t_joueurs2[i].setForeground(Color.GRAY);
+					t_scores2[i].setForeground(Color.GRAY);
+				}
+				else
+				{
+					t_joueurs2[i].setForeground(Color.BLACK);
+					t_scores2[i].setForeground(Color.BLACK);
+					t_joueurs1[i].setForeground(Color.GRAY);
+					t_scores1[i].setForeground(Color.GRAY);
+				}
+			}
+			else
+			{
+				t_joueurs2[i].setForeground(Color.GRAY);
+				t_scores2[i].setForeground(Color.GRAY);
+				t_joueurs1[i].setForeground(Color.GRAY);
+				t_scores1[i].setForeground(Color.GRAY);
+			}
+			
 			//t_arbitres[i].setText(matchs[i].getArbitre().toString());
 			//t_cours[i].setText(matchs[i].getCour().toString());
 			t_dates[i].setText(matchs[i].getDate().obtenirDate());
-			t_heures[i].setText(matchs[i].getDate().obtenirHeure());
+			t_heures[i].setText(matchs[i].getDate().obtenirHeure());	
 			t_scores1[i].setText(matchs[i].obtenirScoreEquipe(1));
 			t_scores2[i].setText(matchs[i].obtenirScoreEquipe(2));
 		}
