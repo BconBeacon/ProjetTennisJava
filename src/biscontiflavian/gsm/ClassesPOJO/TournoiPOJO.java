@@ -17,12 +17,13 @@ public class TournoiPOJO {
 	
 	//Constructeurs******************************************************************************
 	public TournoiPOJO(String nom, EquipePOJO[] t_simpleHomme, EquipePOJO[] t_simpleDame, 
-			EquipePOJO[] t_doubleHomme, EquipePOJO[] t_doubleDame, EquipePOJO[] t_doubleMixe)
+			EquipePOJO[] t_doubleHomme, EquipePOJO[] t_doubleDame, EquipePOJO[] t_doubleMixe, ArbitrePOJO[] t_arbitres)
 	{
 		this.nom = nom;
 		t_ordo = genererTournoi(t_simpleHomme, t_simpleDame, t_doubleHomme, t_doubleDame, t_doubleMixe);
 		assignerDates(CUAgenda.getInstance().getAgenda());
 		assignerCours();
+		assignerArbitres(t_arbitres);
 	}
 	
 	//Méthodes*************************************************************************
@@ -226,6 +227,58 @@ public class TournoiPOJO {
 		}
 	}
 	
+	public void assignerArbitres(ArbitrePOJO[] arbitres)
+	{
+		ArrayList<ArbitrePOJO> l_arbitres = null;
+		
+		for(OrdonnancementPOJO ordo : t_ordo)
+		{
+			MatchPOJO[] matchs = ordo.getMatchs();
+			l_arbitres = regenererListeArbitres(arbitres);
+			
+			for(MatchPOJO m : matchs)
+			{			
+				m.setArbitre(l_arbitres.get(0));
+				l_arbitres.remove(0);
+				if(l_arbitres.size() == 0) l_arbitres = regenererListeArbitres(arbitres);
+			}		
+		}
+		
+		//Réassignation de l'arbitres pour les matchs SH125, SH126, SD125 et SD126
+		reassignerArbitres(new MatchPOJO[] {t_ordo[0].getMatch(124), t_ordo[0].getMatch(125), t_ordo[1].getMatch(124), t_ordo[1].getMatch(125)},
+				arbitres);
+				
+		//Réassignation de l'arbitres pour les matchs DH61, DH62, DD61 et DD62
+		reassignerArbitres(new MatchPOJO[] {t_ordo[2].getMatch(60), t_ordo[2].getMatch(61), t_ordo[3].getMatch(60), t_ordo[3].getMatch(61)},
+				arbitres);
+				
+		//Réassignation de l'arbitres pour les matchs SH127, SD127, DH63 et DD63
+		reassignerArbitres(new MatchPOJO[] {t_ordo[0].getMatch(126), t_ordo[1].getMatch(126), t_ordo[2].getMatch(62), t_ordo[3].getMatch(62)},
+				arbitres);
+	}
+	
+	private ArrayList<ArbitrePOJO> regenererListeArbitres(ArbitrePOJO[] arbitres)
+	{
+		ArrayList<ArbitrePOJO> l_arbitres = new ArrayList<ArbitrePOJO>();
+		for(ArbitrePOJO a : arbitres)
+		{
+			l_arbitres.add(a);
+		}
+		Collections.shuffle(l_arbitres);
+		
+		return l_arbitres;
+	}
+	
+	private void reassignerArbitres(MatchPOJO[] t_matchs, ArbitrePOJO[] arbitres)
+	{
+		ArrayList<ArbitrePOJO> l_arbitres = regenererListeArbitres(arbitres);
+		for(MatchPOJO m : t_matchs)
+		{
+			m.setArbitre(l_arbitres.get(0));
+			l_arbitres.remove(0);
+		}	
+	}
+	
 	//Getters*******************************************************************************************
 	public String getNom()
 	{
@@ -312,7 +365,14 @@ public class TournoiPOJO {
 			DM[i] = e3;
 		}
 		
-		TournoiPOJO tournoi = new TournoiPOJO("Grand Slam - 2019",SH,SD,DH,DD,DM);
+		ArbitrePOJO[] arbitres = new ArbitrePOJO[16];
+		
+		for(int i=0;i<16;i++)
+		{
+			arbitres[i] = new ArbitrePOJO("Arbitre", String.valueOf(i+1));
+		}
+		
+		TournoiPOJO tournoi = new TournoiPOJO("Grand Slam - 2019",SH,SD,DH,DD,DM,arbitres);
 		
 		EquipePOJO[][] vainqueurs = tournoi.genererResultatsTour();;	
 		tournoi.genererTourSuivant(vainqueurs);

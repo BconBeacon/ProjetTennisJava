@@ -285,6 +285,11 @@ public class MatchPOJO {
 		cour = c;
 	}
 	
+	public void setArbitre(ArbitrePOJO a)
+	{
+		arbitre = a;
+	}
+	
 	//Main***********************************************************************************************
 	public static void main(String args[])
 	{

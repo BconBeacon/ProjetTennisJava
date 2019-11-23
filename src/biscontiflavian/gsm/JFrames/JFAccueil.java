@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.border.EmptyBorder;
 
+import biscontiflavian.gsm.ClassesPOJO.ArbitrePOJO;
 import biscontiflavian.gsm.ClassesPOJO.EquipePOJO;
 import biscontiflavian.gsm.ClassesPOJO.JoueurPOJO;
 import biscontiflavian.gsm.ClassesPOJO.TournoiPOJO;
@@ -124,7 +125,14 @@ public class JFAccueil extends JFrame {
 							DM[i] = e3;
 						}
 						
-						TournoiPOJO tournoi = new TournoiPOJO(txt_tournoi.getText(),SH,SD,DH,DD,DM);
+						ArbitrePOJO[] arbitres = new ArbitrePOJO[16];
+						
+						for(int i=0;i<16;i++)
+						{
+							arbitres[i] = new ArbitrePOJO("Arbitre", String.valueOf(i+1));
+						}
+						
+						TournoiPOJO tournoi = new TournoiPOJO(txt_tournoi.getText(),SH,SD,DH,DD,DM,arbitres);
 						
 						JFTournoi newFrame = new JFTournoi(tournoi);
 						newFrame.show();
