@@ -3,9 +3,11 @@ package biscontiflavian.gsm.ClassesUtilitaires;
 import java.time.LocalDate;
 
 public class CUAgenda {
+	//Attributs*************************************************************************
 	private static CUAgenda instance;
 	private CUDate[][] agenda;
 	
+	//Constructeurs**********************************************************************
 	private CUAgenda()
 	{
 		LocalDate date;	
@@ -179,6 +181,7 @@ public class CUAgenda {
 		
 	}
 	
+	//Getters et setters************************************************************************
 	public static CUAgenda getInstance()
 	{
 		if(instance == null)
@@ -188,6 +191,12 @@ public class CUAgenda {
 		return instance;
 	}
 	
+	public CUDate[][] getAgenda()
+	{
+		return agenda;
+	}
+	
+	//Méthodes de test***************************************************************
 	public void afficherDates()
 	{
 		for(CUDate[] ordo : agenda)
@@ -201,11 +210,7 @@ public class CUAgenda {
 		}
 	}
 	
-	public CUDate[][] getAgenda()
-	{
-		return agenda;
-	}
-	
+	//Main*************************************************************************************
 	public static void main (String args[])
 	{
 		CUAgenda agenda = CUAgenda.getInstance();

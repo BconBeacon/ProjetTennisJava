@@ -80,6 +80,11 @@ public class OrdonnancementPOJO {
 		return t_matchs;
 	}
 	
+	public MatchPOJO getMatch(int index)
+	{
+		return t_matchs[index];
+	}
+	
 	//Méthodes de tests**************************************************************************
 	public void afficherMatchs()
 	{

@@ -1004,7 +1004,7 @@ public class JFDouble extends JFrame {
 				}
 				
 				//t_arbitres[i].setText(matchs[i].getArbitre().toString());
-				//t_cours[i].setText(matchs[i].getCour().toString());
+				t_cours[i].setText(matchs[i].getCour().toString());
 				t_dates[i].setText(matchs[i].getDate().obtenirDate());
 				t_heures[i].setText(matchs[i].getDate().obtenirHeure());
 				t_scores1[i].setText(matchs[i].obtenirScoreEquipe(1));

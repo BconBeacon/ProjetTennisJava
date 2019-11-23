@@ -15,6 +15,7 @@ public class CourPOJO {
 	private CUTypeCour type;
 	private boolean couvert;
 	
+	//Constructeurs***************************************************************
 	@SuppressWarnings("preview")
 	public CourPOJO(String ligne)
 	{
@@ -46,11 +47,13 @@ public class CourPOJO {
 				};
 	}
 	
+	//Surcharges de méthodes********************************************************************************
 	public String toString()
 	{
-		return "Cour " + numero + " avec " + nbPlaces + " places et de type " + type.toString();
+		return "Cour " + numero + " " +type.toString();
 	}
 	
+	//Main************************************************************************************************
 	public static void main(String args[])
 	{
 		try

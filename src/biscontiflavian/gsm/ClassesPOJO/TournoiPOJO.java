@@ -1,8 +1,13 @@
 package biscontiflavian.gsm.ClassesPOJO;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
+
+import javax.swing.JOptionPane;
+
+import biscontiflavian.gsm.ClassesDAO.CourDAO;
 import biscontiflavian.gsm.ClassesUtilitaires.*;
 
 public class TournoiPOJO {
@@ -17,6 +22,7 @@ public class TournoiPOJO {
 		this.nom = nom;
 		t_ordo = genererTournoi(t_simpleHomme, t_simpleDame, t_doubleHomme, t_doubleDame, t_doubleMixe);
 		assignerDates(CUAgenda.getInstance().getAgenda());
+		assignerCours();
 	}
 	
 	//Méthodes*************************************************************************
@@ -150,6 +156,74 @@ public class TournoiPOJO {
 			vainqueurs[i] = t_ordo[i].obtenirVainqueurOrdonnancement();
 		}
 		return vainqueurs;
+	}
+	
+	public void assignerCours()
+	{
+		ArrayList<CourPOJO> cours = null;
+		ArrayList<CourPOJO> l_cours = null;
+		try
+		{
+			CourDAO cdao = new CourDAO();
+			cours = new ArrayList<>();
+			
+			for(String cour : cdao.getCours())
+			{
+				CourPOJO c = new CourPOJO(cour);
+				cours.add(c);
+			}
+		}
+		catch(IOException e)
+		{
+			JOptionPane.showMessageDialog(null, "Une erreur est survenue : " + e);
+		}
+		
+		for(OrdonnancementPOJO ordo : t_ordo)
+		{
+			MatchPOJO[] matchs = ordo.getMatchs();
+			l_cours = regenererListeCours(cours);
+			
+			for(MatchPOJO m : matchs)
+			{
+				m.setCour(l_cours.get(0));
+				l_cours.remove(0);
+				if(l_cours.size() == 0) l_cours = regenererListeCours(cours);
+			}		
+		}
+		
+		//Réassignation du cour pour les matchs SH125, SH126, SD125 et SD126
+		reassignerCours(new MatchPOJO[] {t_ordo[0].getMatch(124), t_ordo[0].getMatch(125), t_ordo[1].getMatch(124), t_ordo[1].getMatch(125)},
+				cours);
+		
+		//Réassignation du cour pour les matchs DH61, DH62, DD61 et DD62
+		reassignerCours(new MatchPOJO[] {t_ordo[2].getMatch(60), t_ordo[2].getMatch(61), t_ordo[3].getMatch(60), t_ordo[3].getMatch(61)},
+				cours);
+		
+		//Réassignation du cour pour les matchs SH127, SD127, DH63 et DD63
+		reassignerCours(new MatchPOJO[] {t_ordo[0].getMatch(126), t_ordo[1].getMatch(126), t_ordo[2].getMatch(62), t_ordo[3].getMatch(62)},
+				cours);
+	}
+	
+	private ArrayList<CourPOJO> regenererListeCours(ArrayList<CourPOJO> cours)
+	{
+		ArrayList<CourPOJO> l_cours = new ArrayList<CourPOJO>();
+		for(CourPOJO c : cours)
+		{
+			l_cours.add(c);
+		}
+		Collections.shuffle(l_cours);
+		
+		return l_cours;
+	}
+	
+	private void reassignerCours(MatchPOJO[] t_matchs, ArrayList<CourPOJO> cours)
+	{
+		ArrayList<CourPOJO> l_cours = regenererListeCours(cours);
+		for(MatchPOJO m : t_matchs)
+		{
+			m.setCour(l_cours.get(0));
+			l_cours.remove(0);
+		}
 	}
 	
 	//Getters*******************************************************************************************

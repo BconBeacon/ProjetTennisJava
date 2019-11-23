@@ -161,6 +161,7 @@ public class MatchPOJO {
 	{
 		System.out.println("Match " +  numero);
 		System.out.println(date);
+		System.out.println(cour);
 		try
 		{
 			for(EquipePOJO e : t_equipes)
@@ -277,6 +278,11 @@ public class MatchPOJO {
 	public void setDate(CUDate d)
 	{
 		date = d;
+	}
+	
+	public void setCour(CourPOJO c)
+	{
+		cour = c;
 	}
 	
 	//Main***********************************************************************************************
