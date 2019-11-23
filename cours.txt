@@ -1,0 +1,8 @@
+1|2500|Gazon|True
+2|2000|Dur|True
+3|4000|Gazon|False
+4|3200|Terre|True
+5|6000|Moquette|True
+6|4200|Dur|True
+7|6200|Gazon|Flase
+8|3900|Terre|True
