@@ -3,8 +3,6 @@ package biscontiflavian.gsm.ClassesPOJO;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Date;
-
 import javax.swing.JOptionPane;
 
 import biscontiflavian.gsm.ClassesDAO.CourDAO;
