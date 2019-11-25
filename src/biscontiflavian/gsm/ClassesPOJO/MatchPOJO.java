@@ -149,6 +149,7 @@ public class MatchPOJO {
 		else return false;
 	}
 	
+	//Méthodes de test******************************************************************
 	public void afficherResultatsMatch()
 	{
 		for(SetPOJO set : l_sets)

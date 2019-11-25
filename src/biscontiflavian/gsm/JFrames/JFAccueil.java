@@ -12,6 +12,7 @@ import javax.swing.border.EmptyBorder;
 import biscontiflavian.gsm.ClassesDAO.ArbitreDAO;
 import biscontiflavian.gsm.ClassesDAO.ConnexionDAO;
 import biscontiflavian.gsm.ClassesDAO.DAO;
+import biscontiflavian.gsm.ClassesDAO.JoueurDAO;
 import biscontiflavian.gsm.ClassesPOJO.ArbitrePOJO;
 import biscontiflavian.gsm.ClassesPOJO.EquipePOJO;
 import biscontiflavian.gsm.ClassesPOJO.JoueurPOJO;
@@ -29,6 +30,7 @@ import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class JFAccueil extends JFrame {
 	
@@ -113,6 +115,46 @@ public class JFAccueil extends JFrame {
 						ArrayList<EquipePOJO> DD = new ArrayList<EquipePOJO>();
 						ArrayList<EquipePOJO> DM = new ArrayList<EquipePOJO>();
 						
+						/*DAO<JoueurPOJO> daoJoueur = new JoueurDAO(ConnexionDAO.getInstance());
+						ArrayList<JoueurPOJO> l_hommes = daoJoueur.getAll("H");
+						ArrayList<JoueurPOJO> l_femmes = daoJoueur.getAll("F");
+						
+						if(l_hommes.size() == 128 || l_femmes.size() == 128)
+						{
+							for(int i=0;i<128;i++)
+							{
+								EquipePOJO e1 = new EquipePOJO(new JoueurPOJO[] {l_hommes.get(i)});
+								EquipePOJO e2 = new EquipePOJO(new JoueurPOJO[] {l_femmes.get(i)});
+								SH.add(e1);
+								SD.add(e2);
+							}
+						}
+						else
+						{
+							JOptionPane.showMessageDialog(null, "Erreur, nombre de joueurs masculins et/ou féminins inadéquats. Fermeture du programme");
+							System.exit(0);
+						}
+						
+						Collections.shuffle(l_femmes);
+						Collections.shuffle(l_hommes);
+						
+						for(int i=0;i<64;i++)
+						{
+							EquipePOJO e1 = new EquipePOJO(new JoueurPOJO[] {l_hommes.get(i),l_hommes.get(63-i)});
+							EquipePOJO e2 = new EquipePOJO(new JoueurPOJO[] {l_femmes.get(i),l_femmes.get(63-i)});
+							DH.add(e1);
+							DD.add(e2);
+						}
+						
+						Collections.shuffle(l_femmes);
+						Collections.shuffle(l_hommes);
+						
+						for(int i=0;i<64;i++)
+						{
+							EquipePOJO eq = new EquipePOJO(new JoueurPOJO[] {l_hommes.get(i),l_femmes.get(i)});
+							DM.add(eq);
+						}*/
+						
 						for(int i=0;i<128;i++)
 						{
 							EquipePOJO e1 = new EquipePOJO(new JoueurPOJO[] {new JoueurPOJO("Joueur"+(i+1), "M", i+1, CUSexe.M)});
@@ -134,10 +176,10 @@ public class JFAccueil extends JFrame {
 						DAO<ArbitrePOJO> daoArbitre = new ArbitreDAO(ConnexionDAO.getInstance());
 						ArrayList<ArbitrePOJO> arbitres = daoArbitre.getAll();
 						
-						for(int i=0;i<16;i++)
+						/*for(int i=0;i<16;i++)
 						{
 							arbitres.add(new ArbitrePOJO("Arbitre", String.valueOf(i+1)));
-						}
+						}*/
 						
 						TournoiPOJO tournoi = new TournoiPOJO(txt_tournoi.getText(),SH,SD,DH,DD,DM,arbitres);
 						

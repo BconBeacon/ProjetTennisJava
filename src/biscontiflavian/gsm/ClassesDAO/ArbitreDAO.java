@@ -46,7 +46,7 @@ public class ArbitreDAO extends DAO<ArbitrePOJO>{
 		{
 			ResultSet result = this.connect.createStatement(
 			ResultSet.TYPE_SCROLL_INSENSITIVE,
-			ResultSet.CONCUR_READ_ONLY	).executeQuery("SELECT * FROM Arbitre A INNER JOIN Personne P ON A.IdPersonne == P.IdPersonne");
+			ResultSet.CONCUR_READ_ONLY	).executeQuery("SELECT * FROM Arbitre A INNER JOIN Personne P ON A.IdPersonne = P.IdPersonne");
 			
 			while(result.next())
 			{
@@ -58,5 +58,11 @@ public class ArbitreDAO extends DAO<ArbitrePOJO>{
 			e.printStackTrace();
 		}
 		return l_arbitres;
+	}
+
+	@Override
+	public ArrayList<ArbitrePOJO> getAll(String sexe) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

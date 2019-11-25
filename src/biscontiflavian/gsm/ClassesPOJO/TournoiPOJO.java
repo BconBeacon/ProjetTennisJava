@@ -1,6 +1,7 @@
 package biscontiflavian.gsm.ClassesPOJO;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 import javax.swing.JOptionPane;
@@ -11,6 +12,7 @@ import biscontiflavian.gsm.ClassesUtilitaires.*;
 public class TournoiPOJO {
 	//Attributs*************************************************************************
 	private String nom;
+	private LocalDate date;
 	private OrdonnancementPOJO[] t_ordo;
 	
 	//Constructeurs******************************************************************************
@@ -19,6 +21,7 @@ public class TournoiPOJO {
 	{
 		this.nom = nom;
 		t_ordo = genererTournoi(t_simpleHomme, t_simpleDame, t_doubleHomme, t_doubleDame, t_doubleMixe);
+		date = LocalDate.now();
 		assignerDates(CUAgenda.getInstance().getAgenda());
 		assignerCours();
 		assignerArbitres(t_arbitres);
@@ -155,29 +158,19 @@ public class TournoiPOJO {
 		}
 	}
 	
-	public EquipePOJO[] obtenirVainqueursTournoi()
-	{
-		EquipePOJO[] vainqueurs = new EquipePOJO[5];
-		for(int i=0;i<5;i++)
-		{
-			vainqueurs[i] = t_ordo[i].obtenirVainqueurOrdonnancement();
-		}
-		return vainqueurs;
-	}
-	
 	public void assignerCours()
 	{
-		ArrayList<CourPOJO> cours = null;
-		ArrayList<CourPOJO> l_cours = null;
+		ArrayList<CourPOJO> courts = null;
+		ArrayList<CourPOJO> l_courts = null;
 		try
 		{
 			CourDAO cdao = new CourDAO();
-			cours = new ArrayList<>();
+			courts = new ArrayList<>();
 			
-			for(String cour : cdao.getCours())
+			for(String court : cdao.getCours())
 			{
-				CourPOJO c = new CourPOJO(cour);
-				cours.add(c);
+				CourPOJO c = new CourPOJO(court);
+				courts.add(c);
 			}
 		}
 		catch(IOException e)
@@ -188,48 +181,48 @@ public class TournoiPOJO {
 		for(OrdonnancementPOJO ordo : t_ordo)
 		{
 			MatchPOJO[] matchs = ordo.getMatchs();
-			l_cours = regenererListeCours(cours);
+			l_courts = regenererListeCourts(courts);
 			
 			for(MatchPOJO m : matchs)
 			{
-				m.setCour(l_cours.get(0));
-				l_cours.remove(0);
-				if(l_cours.size() == 0) l_cours = regenererListeCours(cours);
+				m.setCour(l_courts.get(0));
+				l_courts.remove(0);
+				if(l_courts.size() == 0) l_courts = regenererListeCourts(courts);
 			}		
 		}
 		
 		//Réassignation du cour pour les matchs SH125, SH126, SD125 et SD126
 		reassignerCours(new MatchPOJO[] {t_ordo[0].getMatch(124), t_ordo[0].getMatch(125), t_ordo[1].getMatch(124), t_ordo[1].getMatch(125)},
-				cours);
+				courts);
 		
 		//Réassignation du cour pour les matchs DH61, DH62, DD61 et DD62
 		reassignerCours(new MatchPOJO[] {t_ordo[2].getMatch(60), t_ordo[2].getMatch(61), t_ordo[3].getMatch(60), t_ordo[3].getMatch(61)},
-				cours);
+				courts);
 		
 		//Réassignation du cour pour les matchs SH127, SD127, DH63 et DD63
 		reassignerCours(new MatchPOJO[] {t_ordo[0].getMatch(126), t_ordo[1].getMatch(126), t_ordo[2].getMatch(62), t_ordo[3].getMatch(62)},
-				cours);
+				courts);
 	}
 	
-	private ArrayList<CourPOJO> regenererListeCours(ArrayList<CourPOJO> cours)
+	private ArrayList<CourPOJO> regenererListeCourts(ArrayList<CourPOJO> courts)
 	{
-		ArrayList<CourPOJO> l_cours = new ArrayList<CourPOJO>();
-		for(CourPOJO c : cours)
+		ArrayList<CourPOJO> l_courts = new ArrayList<CourPOJO>();
+		for(CourPOJO c : courts)
 		{
-			l_cours.add(c);
+			l_courts.add(c);
 		}
-		Collections.shuffle(l_cours);
+		Collections.shuffle(l_courts);
 		
-		return l_cours;
+		return l_courts;
 	}
 	
-	private void reassignerCours(MatchPOJO[] t_matchs, ArrayList<CourPOJO> cours)
+	private void reassignerCours(MatchPOJO[] t_matchs, ArrayList<CourPOJO> courts)
 	{
-		ArrayList<CourPOJO> l_cours = regenererListeCours(cours);
+		ArrayList<CourPOJO> l_courts = regenererListeCourts(courts);
 		for(MatchPOJO m : t_matchs)
 		{
-			m.setCour(l_cours.get(0));
-			l_cours.remove(0);
+			m.setCour(l_courts.get(0));
+			l_courts.remove(0);
 		}
 	}
 	
@@ -345,6 +338,17 @@ public class TournoiPOJO {
 		}
 	}
 	
+	public EquipePOJO[] obtenirVainqueursTournoi()
+	{
+		EquipePOJO[] vainqueurs = new EquipePOJO[5];
+		for(int i=0;i<5;i++)
+		{
+			vainqueurs[i] = t_ordo[i].obtenirVainqueurOrdonnancement();
+		}
+		return vainqueurs;
+	}
+	
+	//Main***************************************************************************************
 	public static void main (String args[])
 	{		
 		ArrayList<EquipePOJO> SH = new ArrayList<EquipePOJO>();

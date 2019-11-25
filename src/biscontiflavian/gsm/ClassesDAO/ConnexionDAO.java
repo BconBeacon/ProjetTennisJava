@@ -13,9 +13,7 @@ private static Connection instance = null;
 	{
 		try
 		{
-			Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-			String url = "jdbc:ucanaccess://./DBTennis.accdb";
-			instance = DriverManager.getConnection(url);
+			Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");			
 		}
 		catch(ClassNotFoundException ex)
 		{
@@ -23,6 +21,11 @@ private static Connection instance = null;
 			System.exit(0);
 		}
 		
+		try
+		{
+			String url = "jdbc:ucanaccess://./DBTennis.accdb";
+			instance = DriverManager.getConnection(url);
+		}
 		catch (SQLException ex) 
 		{
 			JOptionPane.showMessageDialog(null, "Erreur JDBC : " + ex.getMessage());

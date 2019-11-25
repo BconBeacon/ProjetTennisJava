@@ -31,12 +31,7 @@ public class OrdonnancementPOJO {
 		this.nbSetsGagnants = nbSetsGagnants;
 	}
 	
-	//Méthodes***************************************************************************
-	public void setTableauMatchs(MatchPOJO[] t_matchs)
-	{
-		this.t_matchs = t_matchs;
-	}
-	
+	//Méthodes***************************************************************************	
 	public EquipePOJO[] jouerMatchs()
 	{
 		ArrayList<EquipePOJO> vainqueurs = new ArrayList<>();
@@ -74,7 +69,7 @@ public class OrdonnancementPOJO {
 		return t_matchs[t_matchs.length-1].getVainqueur();
 	}
 	
-	//Getters*************************************************************************
+	//Getters et setters*************************************************************************
 	public MatchPOJO[] getMatchs()
 	{
 		return t_matchs;
@@ -83,6 +78,11 @@ public class OrdonnancementPOJO {
 	public MatchPOJO getMatch(int index)
 	{
 		return t_matchs[index];
+	}
+	
+	public void setTableauMatchs(MatchPOJO[] t_matchs)
+	{
+		this.t_matchs = t_matchs;
 	}
 	
 	//Méthodes de tests**************************************************************************

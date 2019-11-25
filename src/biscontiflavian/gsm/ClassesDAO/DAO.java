@@ -19,5 +19,6 @@ public abstract class DAO<T> {
 	public abstract T find(int id);
 	
 	public abstract ArrayList<T> getAll();
+	public abstract ArrayList<T> getAll(String sexe);
 }
 
