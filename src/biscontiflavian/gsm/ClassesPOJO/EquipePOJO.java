@@ -26,7 +26,7 @@ public class EquipePOJO {
 			else type = CUTypeEquipe.M;
 		}
 	}
-	
+
 	//Méthodes***************************************************************************************************
 	public int obtenirNiveauEquipe()
 	{

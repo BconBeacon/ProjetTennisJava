@@ -14,8 +14,8 @@ public class TournoiPOJO {
 	private OrdonnancementPOJO[] t_ordo;
 	
 	//Constructeurs******************************************************************************
-	public TournoiPOJO(String nom, EquipePOJO[] t_simpleHomme, EquipePOJO[] t_simpleDame, 
-			EquipePOJO[] t_doubleHomme, EquipePOJO[] t_doubleDame, EquipePOJO[] t_doubleMixe, ArbitrePOJO[] t_arbitres)
+	public TournoiPOJO(String nom, ArrayList<EquipePOJO> t_simpleHomme, ArrayList<EquipePOJO> t_simpleDame, 
+			ArrayList<EquipePOJO> t_doubleHomme, ArrayList<EquipePOJO> t_doubleDame, ArrayList<EquipePOJO> t_doubleMixe, ArrayList<ArbitrePOJO> t_arbitres)
 	{
 		this.nom = nom;
 		t_ordo = genererTournoi(t_simpleHomme, t_simpleDame, t_doubleHomme, t_doubleDame, t_doubleMixe);
@@ -25,8 +25,8 @@ public class TournoiPOJO {
 	}
 	
 	//Méthodes*************************************************************************
-	private OrdonnancementPOJO[] genererTournoi(EquipePOJO[] t_simpleHomme, EquipePOJO[] t_simpleDame, 
-			EquipePOJO[] t_doubleHomme, EquipePOJO[] t_doubleDame, EquipePOJO[] t_doubleMixe)
+	private OrdonnancementPOJO[] genererTournoi(ArrayList<EquipePOJO> t_simpleHomme, ArrayList<EquipePOJO> t_simpleDame, 
+			ArrayList<EquipePOJO> t_doubleHomme, ArrayList<EquipePOJO> t_doubleDame, ArrayList<EquipePOJO> t_doubleMixte)
 	{
 		ArrayList<EquipePOJO> SH = new ArrayList<>();
 		ArrayList<EquipePOJO> SD = new ArrayList<>();
@@ -37,16 +37,24 @@ public class TournoiPOJO {
 				new OrdonnancementPOJO(CUTypeMatch.DH, 2),
 				new OrdonnancementPOJO(CUTypeMatch.DD, 2), new OrdonnancementPOJO(CUTypeMatch.DM, 2)};
 		
-		for(int i=0;i<128;i++)
+		try
 		{
-			SH.add(t_simpleHomme[i]);
-			SD.add(t_simpleDame[i]);
+			for(int i=0;i<128;i++)
+			{
+				SH.add(t_simpleHomme.get(i));
+				SD.add(t_simpleDame.get(i));
+			}
+			for(int i=0;i<64;i++)
+			{
+				DH.add(t_doubleHomme.get(i));
+				DD.add(t_doubleDame.get(i));
+				DM.add(t_doubleMixte.get(i));
+			}
 		}
-		for(int i=0;i<64;i++)
+		catch(Exception e)
 		{
-			DH.add(t_doubleHomme[i]);
-			DD.add(t_doubleDame[i]);
-			DM.add(t_doubleMixe[i]);
+			JOptionPane.showMessageDialog(null, "Une des listes d'équipes n'est pas de taille adéquate");
+			System.exit(0);
 		}
 		
 		Collections.shuffle(SH);
@@ -225,7 +233,7 @@ public class TournoiPOJO {
 		}
 	}
 	
-	public void assignerArbitres(ArbitrePOJO[] arbitres)
+	public void assignerArbitres(ArrayList<ArbitrePOJO> arbitres)
 	{
 		ArrayList<ArbitrePOJO> l_arbitres = null;
 		
@@ -255,7 +263,7 @@ public class TournoiPOJO {
 				arbitres);
 	}
 	
-	private ArrayList<ArbitrePOJO> regenererListeArbitres(ArbitrePOJO[] arbitres)
+	private ArrayList<ArbitrePOJO> regenererListeArbitres(ArrayList<ArbitrePOJO> arbitres)
 	{
 		ArrayList<ArbitrePOJO> l_arbitres = new ArrayList<ArbitrePOJO>();
 		for(ArbitrePOJO a : arbitres)
@@ -267,7 +275,7 @@ public class TournoiPOJO {
 		return l_arbitres;
 	}
 	
-	private void reassignerArbitres(MatchPOJO[] t_matchs, ArbitrePOJO[] arbitres)
+	private void reassignerArbitres(MatchPOJO[] t_matchs, ArrayList<ArbitrePOJO> arbitres)
 	{
 		ArrayList<ArbitrePOJO> l_arbitres = regenererListeArbitres(arbitres);
 		for(MatchPOJO m : t_matchs)
@@ -339,18 +347,18 @@ public class TournoiPOJO {
 	
 	public static void main (String args[])
 	{		
-		EquipePOJO[] SH = new EquipePOJO[128];
-		EquipePOJO[] SD = new EquipePOJO[128];
-		EquipePOJO[] DH = new EquipePOJO[64];
-		EquipePOJO[] DD = new EquipePOJO[64];
-		EquipePOJO[] DM = new EquipePOJO[64];
+		ArrayList<EquipePOJO> SH = new ArrayList<EquipePOJO>();
+		ArrayList<EquipePOJO> SD = new ArrayList<EquipePOJO>();
+		ArrayList<EquipePOJO> DH = new ArrayList<EquipePOJO>();
+		ArrayList<EquipePOJO> DD = new ArrayList<EquipePOJO>();
+		ArrayList<EquipePOJO> DM = new ArrayList<EquipePOJO>();
 		
 		for(int i=0;i<128;i++)
 		{
 			EquipePOJO e1 = new EquipePOJO(new JoueurPOJO[] {new JoueurPOJO("Joueur"+(i+1), "M", i+1, CUSexe.M)});
 			EquipePOJO e2 = new EquipePOJO(new JoueurPOJO[] {new JoueurPOJO("Joueur"+(i+1), "F", i+1, CUSexe.F)});
-			SH[i] = e1;
-			SD[i] = e2;
+			SH.add(e1);
+			SD.add(e2);
 		}
 		
 		for(int i=0;i<64;i++)
@@ -358,16 +366,16 @@ public class TournoiPOJO {
 			EquipePOJO e1 = new EquipePOJO(new JoueurPOJO[] {new JoueurPOJO("Joueur"+(i+1), "M", i+1, CUSexe.M),new JoueurPOJO("Joueur"+(i+1), "M", i+1, CUSexe.M)});
 			EquipePOJO e2 = new EquipePOJO(new JoueurPOJO[] {new JoueurPOJO("Joueur"+(i+1), "F", i+1, CUSexe.F),new JoueurPOJO("Joueur"+(i+1), "F", i+1, CUSexe.F)});
 			EquipePOJO e3 = new EquipePOJO(new JoueurPOJO[] {new JoueurPOJO("Joueur"+(i+1), "F", i+1, CUSexe.F),new JoueurPOJO("Joueur"+(i+1), "M", i+1, CUSexe.M)});
-			DH[i] = e1;
-			DD[i] = e2;
-			DM[i] = e3;
+			DH.add(e1);
+			DD.add(e2);
+			DM.add(e3);
 		}
 		
-		ArbitrePOJO[] arbitres = new ArbitrePOJO[16];
+		ArrayList<ArbitrePOJO> arbitres = new ArrayList<ArbitrePOJO>();
 		
 		for(int i=0;i<16;i++)
 		{
-			arbitres[i] = new ArbitrePOJO("Arbitre", String.valueOf(i+1));
+			arbitres.add(new ArbitrePOJO("Arbitre", String.valueOf(i+1)));
 		}
 		
 		TournoiPOJO tournoi = new TournoiPOJO("Grand Slam - 2019",SH,SD,DH,DD,DM,arbitres);

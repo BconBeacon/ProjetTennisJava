@@ -10,7 +10,7 @@ public class ArbitrePOJO extends PersonnePOJO{
 		this.nom = nom;
 		this.prenom = prenom;
 	}
-	
+
 	//Main**********************************************************
 	public static void main(String args[])
 	{

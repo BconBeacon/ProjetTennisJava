@@ -2,11 +2,16 @@ package biscontiflavian.gsm.JFrames;
 
 import java.awt.EventQueue;
 
+import java.sql.Connection;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.border.EmptyBorder;
 
+import biscontiflavian.gsm.ClassesDAO.ArbitreDAO;
+import biscontiflavian.gsm.ClassesDAO.ConnexionDAO;
+import biscontiflavian.gsm.ClassesDAO.DAO;
 import biscontiflavian.gsm.ClassesPOJO.ArbitrePOJO;
 import biscontiflavian.gsm.ClassesPOJO.EquipePOJO;
 import biscontiflavian.gsm.ClassesPOJO.JoueurPOJO;
@@ -23,6 +28,7 @@ import javax.swing.JTextPane;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 
 public class JFAccueil extends JFrame {
 	
@@ -101,18 +107,18 @@ public class JFAccueil extends JFrame {
 					if(txt_token.getText().equals(mdp))
 					{
 						//Création du tournoi**************************************************************************************
-						EquipePOJO[] SH = new EquipePOJO[128];
-						EquipePOJO[] SD = new EquipePOJO[128];
-						EquipePOJO[] DH = new EquipePOJO[64];
-						EquipePOJO[] DD = new EquipePOJO[64];
-						EquipePOJO[] DM = new EquipePOJO[64];
+						ArrayList<EquipePOJO> SH = new ArrayList<EquipePOJO>();
+						ArrayList<EquipePOJO> SD = new ArrayList<EquipePOJO>();
+						ArrayList<EquipePOJO> DH = new ArrayList<EquipePOJO>();
+						ArrayList<EquipePOJO> DD = new ArrayList<EquipePOJO>();
+						ArrayList<EquipePOJO> DM = new ArrayList<EquipePOJO>();
 						
 						for(int i=0;i<128;i++)
 						{
 							EquipePOJO e1 = new EquipePOJO(new JoueurPOJO[] {new JoueurPOJO("Joueur"+(i+1), "M", i+1, CUSexe.M)});
 							EquipePOJO e2 = new EquipePOJO(new JoueurPOJO[] {new JoueurPOJO("Joueur"+(i+1), "F", i+1, CUSexe.F)});
-							SH[i] = e1;
-							SD[i] = e2;
+							SH.add(e1);
+							SD.add(e2);
 						}
 						
 						for(int i=0;i<64;i++)
@@ -120,16 +126,17 @@ public class JFAccueil extends JFrame {
 							EquipePOJO e1 = new EquipePOJO(new JoueurPOJO[] {new JoueurPOJO("Joueur"+(i+1), "M", i+1, CUSexe.M),new JoueurPOJO("Joueur"+(i+1), "M", i+1, CUSexe.M)});
 							EquipePOJO e2 = new EquipePOJO(new JoueurPOJO[] {new JoueurPOJO("Joueur"+(i+1), "F", i+1, CUSexe.F),new JoueurPOJO("Joueur"+(i+1), "F", i+1, CUSexe.F)});
 							EquipePOJO e3 = new EquipePOJO(new JoueurPOJO[] {new JoueurPOJO("Joueur"+(i+1), "F", i+1, CUSexe.F),new JoueurPOJO("Joueur"+(i+1), "M", i+1, CUSexe.M)});
-							DH[i] = e1;
-							DD[i] = e2;
-							DM[i] = e3;
+							DH.add(e1);
+							DD.add(e2);
+							DM.add(e3);
 						}
 						
-						ArbitrePOJO[] arbitres = new ArbitrePOJO[16];
+						DAO<ArbitrePOJO> daoArbitre = new ArbitreDAO(ConnexionDAO.getInstance());
+						ArrayList<ArbitrePOJO> arbitres = daoArbitre.getAll();
 						
 						for(int i=0;i<16;i++)
 						{
-							arbitres[i] = new ArbitrePOJO("Arbitre", String.valueOf(i+1));
+							arbitres.add(new ArbitrePOJO("Arbitre", String.valueOf(i+1)));
 						}
 						
 						TournoiPOJO tournoi = new TournoiPOJO(txt_tournoi.getText(),SH,SD,DH,DD,DM,arbitres);

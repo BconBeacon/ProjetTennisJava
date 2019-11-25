@@ -20,6 +20,8 @@ public class JoueurPOJO extends PersonnePOJO {
 		classement = clas;
 	}
 	
+	public JoueurPOJO() {}
+
 	//Getters************************************************************************
 	public int getClassement() 
 	{		
