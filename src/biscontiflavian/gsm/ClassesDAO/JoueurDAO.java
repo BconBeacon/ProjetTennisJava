@@ -5,6 +5,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+
 import biscontiflavian.gsm.ClassesPOJO.JoueurPOJO;
 import biscontiflavian.gsm.ClassesUtilitaires.CUSexe;
 
@@ -48,15 +50,9 @@ public class JoueurDAO extends DAO<JoueurPOJO>{
 			ResultSet.TYPE_SCROLL_INSENSITIVE,
 			ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM Joueur J INNER JOIN Personne P ON J.IdPersonne = P.IdPersonne");
 			
-			if(result.next())
+			while(result.next())
 			{
-				@SuppressWarnings("preview")
-				CUSexe sexe = switch(result.getString("Sexe"))
-						{
-							case "M" -> CUSexe.M;
-							case "F" -> CUSexe.F;
-							default -> throw new IllegalArgumentException("Unexpected value: " + result.getString("Sexe"));
-						};
+				CUSexe sexe = null;
 				l_joueurs.add(new JoueurPOJO(result.getString("Nom"), result.getString("Prenom"), result.getInt("Classement"), sexe));
 			}
 		}
@@ -74,19 +70,22 @@ public class JoueurDAO extends DAO<JoueurPOJO>{
 		{
 			ResultSet result = this.connect.createStatement(
 					ResultSet.TYPE_SCROLL_INSENSITIVE,
-					ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM Joueur J INNER JOIN Personne P ON J.IdPersonne = P.IdPersonne WHERE Sexe = " + sexe);
+					ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM Joueur J INNER JOIN Personne P ON J.IdPersonne = P.IdPersonne WHERE Sexe = '" + sexe +"'");
 					
-					if(result.next())
-					{
-						@SuppressWarnings("preview")
-						CUSexe s = switch(result.getString("Sexe"))
-								{
-									case "M" -> CUSexe.M;
-									case "F" -> CUSexe.F;
-									default -> throw new IllegalArgumentException("Unexpected value: " + result.getString("Sexe"));
-								};
-						l_joueurs.add(new JoueurPOJO(result.getString("Nom"), result.getString("Prenom"), result.getInt("Classement"), s));
-					}
+			while(result.next())
+			{
+				CUSexe s = null;
+				
+				if(sexe.equals("M"))s = CUSexe.M;
+				else if(sexe.equals("F"))s = CUSexe.F;
+				else
+				{
+					JOptionPane.showMessageDialog(null, "Erreur, le sexe des joueurs doit être défini par 'M' ou 'F'. Fermeture du programme");
+					System.exit(0);
+				}
+				
+				l_joueurs.add(new JoueurPOJO(result.getString("Nom"), result.getString("Prenom"), result.getInt("Classement"), s));
+			}
 		}
 		catch(SQLException e)
 		{

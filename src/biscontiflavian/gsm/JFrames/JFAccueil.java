@@ -115,11 +115,12 @@ public class JFAccueil extends JFrame {
 						ArrayList<EquipePOJO> DD = new ArrayList<EquipePOJO>();
 						ArrayList<EquipePOJO> DM = new ArrayList<EquipePOJO>();
 						
-						/*DAO<JoueurPOJO> daoJoueur = new JoueurDAO(ConnexionDAO.getInstance());
-						ArrayList<JoueurPOJO> l_hommes = daoJoueur.getAll("H");
+						DAO<JoueurPOJO> daoJoueur = new JoueurDAO(ConnexionDAO.getInstance());
+						ArrayList<JoueurPOJO> l_hommes = daoJoueur.getAll("M");
 						ArrayList<JoueurPOJO> l_femmes = daoJoueur.getAll("F");
 						
-						if(l_hommes.size() == 128 || l_femmes.size() == 128)
+						//Le tournoi doit comporter 128 joueurs hommes et 128 joueurs dames
+						if(l_hommes.size() == 128 && l_femmes.size() == 128)
 						{
 							for(int i=0;i<128;i++)
 							{
@@ -153,33 +154,17 @@ public class JFAccueil extends JFrame {
 						{
 							EquipePOJO eq = new EquipePOJO(new JoueurPOJO[] {l_hommes.get(i),l_femmes.get(i)});
 							DM.add(eq);
-						}*/
-						
-						for(int i=0;i<128;i++)
-						{
-							EquipePOJO e1 = new EquipePOJO(new JoueurPOJO[] {new JoueurPOJO("Joueur"+(i+1), "M", i+1, CUSexe.M)});
-							EquipePOJO e2 = new EquipePOJO(new JoueurPOJO[] {new JoueurPOJO("Joueur"+(i+1), "F", i+1, CUSexe.F)});
-							SH.add(e1);
-							SD.add(e2);
-						}
-						
-						for(int i=0;i<64;i++)
-						{
-							EquipePOJO e1 = new EquipePOJO(new JoueurPOJO[] {new JoueurPOJO("Joueur"+(i+1), "M", i+1, CUSexe.M),new JoueurPOJO("Joueur"+(i+1), "M", i+1, CUSexe.M)});
-							EquipePOJO e2 = new EquipePOJO(new JoueurPOJO[] {new JoueurPOJO("Joueur"+(i+1), "F", i+1, CUSexe.F),new JoueurPOJO("Joueur"+(i+1), "F", i+1, CUSexe.F)});
-							EquipePOJO e3 = new EquipePOJO(new JoueurPOJO[] {new JoueurPOJO("Joueur"+(i+1), "F", i+1, CUSexe.F),new JoueurPOJO("Joueur"+(i+1), "M", i+1, CUSexe.M)});
-							DH.add(e1);
-							DD.add(e2);
-							DM.add(e3);
-						}
+						}						
 						
 						DAO<ArbitrePOJO> daoArbitre = new ArbitreDAO(ConnexionDAO.getInstance());
 						ArrayList<ArbitrePOJO> arbitres = daoArbitre.getAll();
 						
-						/*for(int i=0;i<16;i++)
+						//Le tournoi doit comporter au minimum 8 arbitres
+						if(arbitres.size() < 8)
 						{
-							arbitres.add(new ArbitrePOJO("Arbitre", String.valueOf(i+1)));
-						}*/
+							JOptionPane.showMessageDialog(null, "Erreur, le tournoi requiert au minimum 8 arbitres. Fermeture du programme");
+							System.exit(0);
+						}
 						
 						TournoiPOJO tournoi = new TournoiPOJO(txt_tournoi.getText(),SH,SD,DH,DD,DM,arbitres);
 						
