@@ -6,6 +6,8 @@ public class SetPOJO {
 	//Attributs************************************************************************
 	private byte ptsE1;
 	private byte ptsE2;
+	private byte ptsTBE1;
+	private byte ptsTBE2;
 	private enum Type { normal, dernier };
 	private Type type;
 	
@@ -14,6 +16,8 @@ public class SetPOJO {
 	{
 		ptsE1 = 0;
 		ptsE2 = 0;
+		ptsTBE1 = 0;
+		ptsTBE2 = 0;
 		
 		if(dernierSet)type = Type.dernier;
 		else type = Type.normal;
@@ -34,6 +38,11 @@ public class SetPOJO {
 			{
 				incrementerPoint(prob);
 				if(ptsE1 == 7 || ptsE2 == 7) fin = true;
+				if(ptsE1 == 6 && ptsE2 == 6) 
+				{
+					jouerTieBreak(prob);
+					fin = true;
+				}
 				else if(ptsE1 == 6 || ptsE2 == 6)
 				{
 					if(ptsE1 - ptsE2 > 1 || ptsE2 - ptsE1 > 1)fin = true;
@@ -66,6 +75,49 @@ public class SetPOJO {
 		else ptsE2++;
 	}
 	
+	private void jouerTieBreak(int prob)
+	{
+		boolean fin = false;
+		while(!fin)
+		{
+			Random r = new Random();
+			int i = r.nextInt(101);
+			
+			if(i <= prob)ptsTBE1++;
+			else ptsTBE2++;
+			
+			if(ptsTBE1 == 12) 
+			{
+				fin = true;
+				ptsE1++;
+			}
+			else if(ptsTBE2 == 12)
+			{
+				fin = true;
+				ptsE2++;
+			}
+			else if(ptsTBE1 >= 7 || ptsTBE2 >= 7)
+			{
+				if(ptsTBE1 - ptsTBE2 > 1) 
+				{
+					fin = true;
+					ptsE1++;
+				}
+				else if(ptsTBE2 - ptsTBE1 > 1)
+				{
+					fin = true;
+					ptsE2++;
+				}
+			}
+		}
+	}
+	
+	public boolean tieBreak()
+	{
+		if(ptsTBE1 != 0 || ptsTBE2 != 0)return true;
+		else return false;
+	}
+	
 	//Surchages de méthodes**********************************************************************
 	public String toString()
 	{
@@ -81,6 +133,16 @@ public class SetPOJO {
 	public int getPtsE2()
 	{
 		return ptsE2;
+	}
+	
+	public int getPtsTBE1()
+	{
+		return ptsTBE1;
+	}
+	
+	public int getPtsTBE2()
+	{
+		return ptsTBE2;
 	}
 	
 	//Main*********************************************************************************

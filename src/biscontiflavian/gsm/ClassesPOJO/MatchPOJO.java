@@ -188,6 +188,7 @@ public class MatchPOJO {
 				for(SetPOJO set : l_sets)
 				{
 					score += set.getPtsE1();
+					if(set.tieBreak()) score += "(" + set.getPtsTBE1() + ")";
 					score += " ";
 				}
 				break;
@@ -197,6 +198,7 @@ public class MatchPOJO {
 				for(SetPOJO set : l_sets)
 				{
 					score += set.getPtsE2();
+					if(set.tieBreak()) score += "(" + set.getPtsTBE2() + ")";
 					score += " ";
 				}
 				break;
